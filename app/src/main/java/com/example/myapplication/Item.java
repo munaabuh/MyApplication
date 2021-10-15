@@ -45,4 +45,14 @@ public class Item {
     public void setResid(int resid) {
         this.resid = resid;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "amount=" + amount +
+                ", isHappy=" + isHappy +
+                ", description='" + description + '\'' +
+                ", resid=" + resid +
+                '}';
+    }
 }
