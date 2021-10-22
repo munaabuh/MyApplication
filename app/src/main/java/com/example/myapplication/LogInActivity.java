@@ -17,7 +17,9 @@ import android.widget.Toast;
 
 public class LogInActivity extends AppCompatActivity implements View.OnLongClickListener, DialogInterface.OnClickListener {
 
-    private Button buttonLogIn, buttonSignUp;
+
+
+    private Button loginButton, buttonSignUp;
     private EditText editTextEmail, editTextPassword;
 
     @Override
@@ -25,13 +27,13 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
-        buttonLogIn = findViewById(R.id.buttonLogIn);
+        loginButton = findViewById(R.id.loginButton);
         buttonSignUp = findViewById(R.id.buttonSignUp);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
 
         // sets the required button to respond to long click, otherwise it won't.
-        buttonLogIn.setOnLongClickListener(this);
+        loginButton.setOnLongClickListener(this);
 
         SharedPreferences sp = getSharedPreferences("settings",MODE_PRIVATE);
         String email = sp.getString("email", "");
