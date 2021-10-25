@@ -19,7 +19,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
 
 
 
-    private Button loginButton, buttonSignUp;
+    private Button buttonLogIn, buttonSignUp;
     private EditText editTextEmail, editTextPassword;
 
     @Override
@@ -27,13 +27,13 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
 
-        loginButton = findViewById(R.id.loginButton);
+        buttonLogIn = findViewById(R.id.buttonLogIn);
         buttonSignUp = findViewById(R.id.buttonSignUp);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
 
         // sets the required button to respond to long click, otherwise it won't.
-        loginButton.setOnLongClickListener(this);
+        buttonLogIn.setOnLongClickListener(this);
 
         SharedPreferences sp = getSharedPreferences("settings",MODE_PRIVATE);
         String email = sp.getString("email", "");
@@ -48,7 +48,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
 
     public void logIn(View view){
 
-        Intent intent = new Intent(this, WelcomeActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         if(!editTextEmail.getText().toString().equals("") && editTextEmail.getText().toString().contains("@") && !editTextPassword.getText().toString().equals("")){
 
             //saving email & password of the user in a local file for future use

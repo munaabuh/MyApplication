@@ -5,15 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="@drawable/yellow"
     android:orientation="vertical"
-    android:background="@drawable/blue"
     tools:context=".WelcomeActivity">
 
-    <TextView
 
+
+    <TextView
         android:layout_margin="20dp"
         android:padding="20dp"
         android:text="Hello Today ;)!"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="24sp"
         android:gravity="center"
         android:id="@+id/textViewWelcome"
@@ -23,6 +26,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:text="Have an account?"
         android:textSize="22sp"
         android:layout_gravity="center"
@@ -30,6 +35,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="22sp"
         android:gravity="center"
         android:layout_margin="15dp"
@@ -38,12 +45,13 @@
 
     <Button
         android:layout_margin="15dp"
-        android:backgroundTint="@color/black"
+        android:background="@drawable/button_bg"
         android:text="Log In"
         android:padding="15dp"
+        android:textColor="@color/white"
         android:onClick="logIn"
         android:id="@+id/buttonLogIn"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         />
 
@@ -52,6 +60,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Here?"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="22sp"
         android:layout_gravity="center"
         android:id="@+id/textViewNote_3"/>
@@ -60,17 +70,20 @@
         android:layout_height="wrap_content"
         android:textSize="22sp"
         android:layout_margin="15dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:text="Want to get to know us better and join our supportive family?
 Sign Up here ;)!"
         android:id="@+id/textViewNote_4"/>
     <Button
         android:layout_margin="15dp"
-        android:backgroundTint="@color/black"
+        android:background="@drawable/button_bg"
         android:padding="15dp"
         android:text="Sign Up"
         android:onClick="signUp"
+        android:textColor="@color/white"
         android:id="@+id/buttonSignUp"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         />
 

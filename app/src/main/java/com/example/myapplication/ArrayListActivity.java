@@ -27,12 +27,12 @@ public class ArrayListActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_array_list);
 
-        list =  new ArrayList<>();
+      /*  list =  new ArrayList<>();
         list.add(new Item(50, true, "This is my first Item", R.drawable.pretty));
         list.add(new Item(50, true, "This is my second Item", R.drawable.pretty));
         list.add(new Item(50, true, "This is my third Item", R.drawable.pretty));
         list.add(new Item(50, true, "This is my forth Item", R.drawable.pretty));
-        list.add(new Item(50, true, "This is my fifth Item", R.drawable.pretty));
+        list.add(new Item(50, true, "This is my fifth Item", R.drawable.pretty));*/
 
         //reference to the list view so it can be programmed
         myListView = findViewById(R.id.mylistview);

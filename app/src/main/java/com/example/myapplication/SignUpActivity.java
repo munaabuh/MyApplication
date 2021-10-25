@@ -22,7 +22,7 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
 
     private Button buttonSubmit;
     private RadioButton radioButtonFemale, radioButtonMale;
-    private EditText editTextName, editTextSerName,editTextEmail, editTextBirthday, editTextPassword;
+    private EditText editTextName, editTextSurname,editTextEmail, editTextBirthday, editTextPassword;
     private TextView textViewGender;
 
     @Override
@@ -37,7 +37,7 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
         radioButtonFemale = findViewById(R.id.radioButtonFemale);
 
         editTextName = findViewById(R.id.editTextName);
-        editTextSerName = findViewById(R.id.editTextSerName);
+        editTextSurname = findViewById(R.id.editTextSurname);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextBirthday = findViewById(R.id.editTextBirthday);
         editTextPassword = findViewById(R.id.editTextPassword);
@@ -49,7 +49,7 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
 
     public void submit(View view){
 
-        Intent intent = new Intent(this, WelcomeActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
 
         String email = editTextEmail.getText().toString();
         String password = editTextPassword.getText().toString();

@@ -16,7 +16,7 @@
             android:id="@+id/imageItem"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/welcome" />
+            android:src="@drawable/blue" />
 
         <TextView
         android:textSize="24sp"
