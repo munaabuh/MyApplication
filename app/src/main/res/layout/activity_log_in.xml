@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/wallpaper"
+    android:background="@drawable/wavy"
     tools:context=".LogInActivity">
 
     <ImageView
@@ -43,6 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:hint="Password"
+        android:drawableEnd="@drawable/lock_icon"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:background="@drawable/edit_text_bg"

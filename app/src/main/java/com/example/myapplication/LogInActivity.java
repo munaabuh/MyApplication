@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,10 +16,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class LogInActivity extends AppCompatActivity implements View.OnLongClickListener, DialogInterface.OnClickListener {
 
-
-
+    private static final String TAG = "FIREBASE";
+    private FirebaseAuth mAuth;
     private Button buttonLogIn, buttonSignUp;
     private EditText editTextEmail, editTextPassword;
 
@@ -26,6 +33,9 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_in);
+
+        //returns a reference to the object of the project Firebase
+        mAuth = FirebaseAuth.getInstance();
 
         buttonLogIn = findViewById(R.id.buttonLogIn);
         buttonSignUp = findViewById(R.id.buttonSignUp);
@@ -48,7 +58,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
 
     public void logIn(View view){
 
-        Intent intent = new Intent(this, MainActivity.class);
+        //Intent intent = new Intent(this, MainActivity.class);
         if(!editTextEmail.getText().toString().equals("") && editTextEmail.getText().toString().contains("@") && !editTextPassword.getText().toString().equals("")){
 
             //saving email & password of the user in a local file for future use
@@ -64,11 +74,15 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
 
             //saving & closing the file
             editor.commit();
+            //intent.putExtra("name", editTextEmail.getText().toString());
 
-            // intent.putExtra("name", editTextEmail.getText().toString());
-            startActivity(intent);
+            login(editTextEmail.getText().toString(), editTextPassword.getText().toString());
+
+            //startActivity(intent);
 
         }
+
+
 
     }
 
@@ -129,4 +143,27 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
 
         return super.onOptionsItemSelected(item);
     }
+   public void login(String email, String password){
+       mAuth.signInWithEmailAndPassword(email, password)
+               .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                   @Override
+                   public void onComplete(@NonNull Task<AuthResult> task) {
+                       if (task.isSuccessful()) {
+                           // Sign in success, update UI with the signed-in user's information
+                           Log.d(TAG, "signInWithEmail:success");
+                           FirebaseUser user = mAuth.getCurrentUser();
+                           Intent i = new Intent(LogInActivity.this, MainActivity.class);
+                           startActivity(i);
+
+                       } else {
+                           // If sign in fails, display a message to the user.
+                           Log.w(TAG, "signInWithEmail:failure", task.getException());
+                           Toast.makeText(LogInActivity.this, "Authentication failed.",
+                                   Toast.LENGTH_SHORT).show();
+                       }
+
+                       // ...
+                   }
+               });
+   }
 }

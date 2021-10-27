@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/wallpaper"
+    android:background="@drawable/wavy"
     tools:context=".SignUpActivity">
 
     <ImageView
@@ -81,6 +81,7 @@
         android:hint="Password"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
+        android:drawableEnd="@drawable/lock_icon"
         android:background="@drawable/edit_text_bg"
         android:inputType="textPassword"
         android:padding="8dp" />

@@ -5,14 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="@drawable/yellow"
+    android:background="@drawable/spots"
     android:orientation="vertical"
     tools:context=".WelcomeActivity">
 
-
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/logo"/>
 
     <TextView
-        android:layout_margin="20dp"
+        android:layout_margin="8dp"
         android:padding="20dp"
         android:text="Hello Today ;)!"
         android:textColor="@color/black"
@@ -32,16 +36,7 @@
         android:textSize="22sp"
         android:layout_gravity="center"
         android:id="@+id/textViewNote_1"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="22sp"
-        android:gravity="center"
-        android:layout_margin="15dp"
-        android:text="Hello again! We're thirlled to have you back;) Log In Here"
-        android:id="@+id/textViewNote_2"/>
+
 
     <Button
         android:layout_margin="15dp"
@@ -65,16 +60,7 @@
         android:textSize="22sp"
         android:layout_gravity="center"
         android:id="@+id/textViewNote_3"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="22sp"
-        android:layout_margin="15dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:text="Want to get to know us better and join our supportive family?
-Sign Up here ;)!"
-        android:id="@+id/textViewNote_4"/>
+
     <Button
         android:layout_margin="15dp"
         android:background="@drawable/button_bg"

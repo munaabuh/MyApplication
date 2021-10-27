@@ -30,9 +30,9 @@ public class WelcomeActivity extends AppCompatActivity implements DialogInterfac
 
         textViewWelcome = findViewById(R.id.textViewWelcome);
         textViewNote_1 = findViewById(R.id.textViewNote_1);
-        textViewNote_2 = findViewById(R.id.textViewNote_2);
+
         textViewNote_3 = findViewById(R.id.textViewNote_3);
-        textViewNote_4 = findViewById(R.id.textViewNote_4);
+
 
 
         String name = getIntent().getStringExtra("name");

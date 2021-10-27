@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,10 +17,18 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity implements DialogInterface.OnClickListener{
 
+    private static final String TAG = "FIREBASE";
+    private FirebaseAuth mAuth;
     private Button buttonSubmit;
     private RadioButton radioButtonFemale, radioButtonMale;
     private EditText editTextName, editTextSurname,editTextEmail, editTextBirthday, editTextPassword;
@@ -30,6 +39,8 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        mAuth = FirebaseAuth.getInstance();
 
         buttonSubmit = findViewById(R.id.buttonSubmit);
 
@@ -49,20 +60,23 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
 
     public void submit(View view){
 
-        Intent intent = new Intent(this, MainActivity.class);
+        //Intent intent = new Intent(this, MainActivity.class);
 
         String email = editTextEmail.getText().toString();
         String password = editTextPassword.getText().toString();
 
-        if(!email.equals("") && email.contains("@") && validate(email)){
-            intent.putExtra("name", email);
-            if(!password.equals("") && validate(password))
-                startActivity(intent);
+        signUp(editTextEmail.getText().toString(), editTextPassword.getText().toString());
+
+        //if(!email.equals("") && email.contains("@") && validate(email)){
+           // intent.putExtra("name", email);
+            //if(!password.equals("") && validate(password))
+                //startActivity(intent);
+
         }
 
-    }
 
-    public boolean validate(String str){
+
+   /* public boolean validate(String str){
 
         Pattern upperCase =  Pattern.compile("[A - Z]");
         Pattern lowerCase = Pattern.compile("[a - z]");
@@ -79,7 +93,8 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
 
         return true;
 
-    }
+    }*/
+
     @Override
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -121,6 +136,28 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void signUp(String email, String password){
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "createUserWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            Intent i = new Intent(SignUpActivity.this, MainActivity.class);
+                            startActivity(i);
+
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(SignUpActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 
 }
