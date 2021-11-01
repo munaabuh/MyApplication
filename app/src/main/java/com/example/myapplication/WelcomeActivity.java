@@ -17,7 +17,7 @@ import android.widget.Toast;
 public class WelcomeActivity extends AppCompatActivity implements DialogInterface.OnClickListener{
 
     private Button buttonLogIn, buttonSignUp;
-    private TextView textViewWelcome, textViewNote_1, textViewNote_2, textViewNote_3, textViewNote_4;
+    private TextView textViewWelcome, textViewNote_1, textViewNote_2, textViewNote_3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

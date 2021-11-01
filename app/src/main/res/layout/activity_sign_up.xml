@@ -34,6 +34,7 @@
         android:hint="Name"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
+        android:drawableEnd="@drawable/pen_icon"
         android:background="@drawable/edit_text_bg"
         android:inputType="text"
         android:padding="8dp" />
@@ -46,6 +47,7 @@
         android:hint="Surname"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
+        android:drawableEnd="@drawable/pen_icon"
         android:background="@drawable/edit_text_bg"
         android:inputType="text"
         android:padding="8dp" />
@@ -56,6 +58,7 @@
         android:layout_margin="8dp"
         android:hint="Email"
         android:textColor="@color/black"
+        android:drawableEnd="@drawable/email_icon"
         android:textColorHint="@color/black"
         android:background="@drawable/edit_text_bg"
         android:inputType="textEmailAddress"
@@ -69,6 +72,7 @@
         android:hint="Birthday"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
+        android:drawableEnd="@drawable/calendar_icon"
         android:background="@drawable/edit_text_bg"
         android:inputType="date"
         android:padding="8dp" />
