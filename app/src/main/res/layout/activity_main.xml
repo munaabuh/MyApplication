@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -60,7 +64,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -68,7 +71,7 @@
             <ImageView
                 android:layout_width="200dp"
                 android:layout_height="250dp"
-                android:background="@drawable/image_bg"/>
+                android:background="@drawable/image_bg" />
 
             <ImageView
                 android:layout_width="150dp"
@@ -144,10 +147,10 @@
         <ImageView
             android:layout_width="380dp"
             android:layout_height="80dp"
-            android:background="@drawable/list_d1"
-            android:layout_marginRight="20dp"
             android:layout_marginLeft="18dp"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/list_d1" />
 
         <ImageView
             android:layout_width="50dp"
@@ -220,4 +223,48 @@
 
     </RelativeLayout>
 
-</LinearLayout>
+    <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+           <ImageView
+               android:layout_width="380dp"
+               android:layout_height="80dp"
+               android:background="@drawable/list_d3"
+               android:layout_marginRight="20dp"
+               android:layout_marginLeft="18dp"
+               android:layout_marginTop="10dp"/>
+
+           <ImageView
+               android:layout_width="50dp"
+               android:layout_height="60dp"
+               android:layout_centerVertical="true"
+               android:layout_marginLeft="35dp"
+               android:layout_marginTop="40dp"
+               android:src="@drawable/stress"/>
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Stress"
+               android:textSize="20dp"
+               android:textColor="@color/purple"
+               android:textStyle="bold"
+               android:layout_marginLeft="105dp"
+               android:layout_marginTop="20dp"/>
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Causes, effects, treatments"
+               android:textSize="14dp"
+               android:textColor="@color/purple"
+               android:textStyle="bold"
+               android:layout_marginLeft="105dp"
+               android:layout_marginTop="50dp"/>
+
+       </RelativeLayout>
+
+   </LinearLayout>
+
+</ScrollView>

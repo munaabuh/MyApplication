@@ -131,7 +131,7 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
                 Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.exit_menu:
-                // closeApplication();
+               finish();
                 break;
         }
 
