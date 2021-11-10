@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,13 +18,18 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements DialogInterface.OnClickListener{
 
-
+    private Button profileButton;
+    private CardView mentalHealthCard, mindfulnessCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        findViewById(R.id.profileButton);
+        findViewById(R.id.mindfulnessCard);
+        findViewById(R.id.mentalHealthCard);
 
     }
 
@@ -69,4 +75,12 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void profile(View view){
+
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+
+    }
+
 }

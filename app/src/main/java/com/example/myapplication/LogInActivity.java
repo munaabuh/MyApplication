@@ -52,7 +52,6 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
         if(!email.equals("") && !password.equals("") ){
             editTextEmail.setText(email);
             editTextPassword.setText(password);
-
         }
     }
 
