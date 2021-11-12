@@ -83,7 +83,7 @@ public class WelcomeActivity extends AppCompatActivity implements DialogInterfac
                 Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.exit_menu:
-                // closeApplication();
+                this.finish();// closeApplication();
                 break;
         }
 

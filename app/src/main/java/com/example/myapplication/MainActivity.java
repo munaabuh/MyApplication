@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
                 Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.exit_menu:
-                finish();
+                this.finish();
                 break;
         }
 

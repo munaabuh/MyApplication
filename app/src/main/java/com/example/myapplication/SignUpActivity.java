@@ -27,12 +27,14 @@ import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity implements DialogInterface.OnClickListener{
 
-    private static final String TAG = "FIREBASE";
+
     private FirebaseAuth mAuth;
     private Button buttonSubmit;
+    private TextView textViewGender;
+    private static final String TAG = "FIREBASE";
     private RadioButton radioButtonFemale, radioButtonMale;
     private EditText editTextName, editTextSurname,editTextEmail, editTextBirthday, editTextPassword;
-    private TextView textViewGender;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,7 +133,7 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
                 Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.exit_menu:
-               finish();
+               this.finish();
                 break;
         }
 

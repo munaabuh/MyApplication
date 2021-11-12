@@ -24,9 +24,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LogInActivity extends AppCompatActivity implements View.OnLongClickListener, DialogInterface.OnClickListener {
 
-    private static final String TAG = "FIREBASE";
     private FirebaseAuth mAuth;
     private Button buttonLogIn, buttonSignUp;
+    private static final String TAG = "FIREBASE";
     private EditText editTextEmail, editTextPassword;
 
     @Override
@@ -136,7 +136,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
                 Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.exit_menu:
-                finish();
+                this.finish();
                 break;
         }
 

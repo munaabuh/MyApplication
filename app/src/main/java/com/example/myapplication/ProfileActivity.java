@@ -126,7 +126,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.exit_menu:
-                finish();
+                this.finish();
                 break;
         }
 
