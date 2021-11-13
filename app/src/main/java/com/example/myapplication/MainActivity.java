@@ -83,4 +83,11 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
 
     }
 
+    public void mentalHealth(View view){
+
+        Intent intent = new Intent(this, MentalHealthActivity.class);
+        startActivity(intent);
+
+    }
+
 }
