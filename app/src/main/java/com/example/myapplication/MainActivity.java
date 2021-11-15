@@ -90,11 +90,11 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
 
     }
 
-    public void mindfulness(View view){
+   public void  mindfulness(View view){
 
-        Intent intent =  new Intent(this, MindfulnessActivity.class);
+        Intent intent = new Intent(this,MindfulnessActivity.class);
         startActivity(intent);
 
-    }
+   }
 
 }
