@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements DialogInterface.OnClickListener{
 
+    private Intent musicIntent;
     private Button profileButton;
     private CardView mentalHealthCard, mindfulnessCard;
 
@@ -30,6 +31,10 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         findViewById(R.id.profileButton);
         findViewById(R.id.mindfulnessCard);
         findViewById(R.id.mentalHealthCard);
+
+        //this will start the service which in turn will start the music
+        musicIntent = new Intent(this, MusicService.class);
+        startService(musicIntent);
 
     }
 
@@ -96,5 +101,6 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         startActivity(intent);
 
    }
+
 
 }
