@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements DialogInterface.OnClickListener{
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
     private Intent musicIntent;
     private Button profileButton;
     private CardView mentalHealthCard, mindfulnessCard;
+    private RelativeLayout anxietyCard, overthinkingCard, stressCard, depressionCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,5 +104,32 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
 
    }
 
+   public void anxiety(View view){
+
+        Intent intent = new Intent(this,AnxietyActivity.class);
+        startActivity(intent);
+
+   }
+
+   public void overthinking(View view){
+
+        Intent intent = new Intent(this, OverthinkingActivity.class);
+        startActivity(intent);
+
+   }
+
+   public void stress(View view){
+
+        Intent intent = new Intent(this, StressActivity.class);
+        startActivity(intent);
+
+   }
+
+   public void depression(View view){
+
+        Intent intent = new Intent(this, DepressionActivity.class);
+        startActivity(intent);
+
+   }
 
 }

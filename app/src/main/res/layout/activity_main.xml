@@ -28,11 +28,11 @@
 
         <Button
             android:id="@+id/profileButton"
-            android:onClick="profile"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_alignParentRight="true"
-            android:background="@drawable/profile" />
+            android:background="@drawable/profile"
+            android:onClick="profile" />
 
         <RelativeLayout
             android:id="@+id/relativeLayout_1"
@@ -149,6 +149,8 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/anxietyCard"
+        android:onClick="anxiety"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -191,6 +193,8 @@
     </RelativeLayout>
 
    <RelativeLayout
+           android:id="@+id/overthinkingCard"
+           android:onClick="overthinking"
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
 
@@ -233,6 +237,8 @@
        </RelativeLayout>
 
     <RelativeLayout
+           android:id="@+id/stressCard"
+           android:onClick="stress"
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
 
@@ -275,6 +281,8 @@
        </RelativeLayout>
 
    <RelativeLayout
+           android:id="@+id/depressionCard"
+           android:onClick="depression"
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
 

@@ -22,7 +22,9 @@
         <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/search_bg.xml" value="0.1" />
         <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/search_icon.xml" value="0.1" />
         <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/drawable/vie_bg.xml" value="0.1" />
+        <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_anxiety.xml" value="0.14764492753623187" />
         <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_array_list.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_depression.xml" value="0.14764492753623187" />
         <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_first_page.xml" value="0.14402173913043478" />
         <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_intro.xml" value="0.14402173913043478" />
         <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_log_in.xml" value="0.10666666666666667" />
@@ -30,8 +32,10 @@
         <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_mental_health.xml" value="0.12760416666666666" />
         <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_mindfulness.xml" value="0.13405797101449277" />
         <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_mindfulness2.xml" value="0.13405797101449277" />
+        <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_overthinking.xml" value="0.14764492753623187" />
         <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_profile.xml" value="0.1480978260869565" />
         <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
+        <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_stress.xml" value="0.14764492753623187" />
         <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_test.xml" value="0.14855072463768115" />
         <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/layout/activity_welcome.xml" value="0.22" />
         <entry key="..\:/Users/monan/AndroidStudioProjects/MyApplication/app/src/main/res/layout/item_row.xml" value="0.14945652173913043" />

@@ -9,10 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+        <activity
+            android:name=".DepressionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".StressActivity"
+            android:exported="true" />
+        <activity
+            android:name=".OverthinkingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AnxietyActivity"
+            android:exported="true" />
+
         <service
             android:name=".MusicService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <activity
             android:name=".MentalHealthActivity"

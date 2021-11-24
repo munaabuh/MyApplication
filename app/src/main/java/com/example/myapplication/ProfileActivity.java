@@ -22,13 +22,13 @@ import android.widget.Toast;
 import java.io.FileNotFoundException;
 import java.nio.channels.InterruptedByTimeoutException;
 
-public class ProfileActivity extends AppCompatActivity implements View.OnClickListener,DialogInterface.OnClickListener{
+public class ProfileActivity extends AppCompatActivity implements View.OnClickListener,DialogInterface.OnClickListener, View.OnLongClickListener {
 
     //request for camera activity result
     private static final int CAMERA_REQUEST = 0;
     private static final int GALLERY_REQUEST = 1;
     //attributes
-    private Button buttonCamera, buttonGallery;
+    private Button buttonCamera;
     private ImageView imageViewProfile;
 
     //for picture of camera
@@ -43,9 +43,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         //gets reference for the design components
         buttonCamera = findViewById(R.id.buttonCamera);
         buttonCamera.setOnClickListener(this);
+        buttonCamera.setOnLongClickListener(this);
 
-        buttonGallery = findViewById(R.id.buttonGallery);
-        buttonGallery.setOnClickListener(this);
 
         imageViewProfile = findViewById(R.id.imageViewProfile);
 
@@ -54,15 +53,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View view) {
 
-        if(view.getId() == R.id.buttonCamera){
             Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(i, CAMERA_REQUEST);
-        }
-        else{
-            Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-            startActivityForResult(i, GALLERY_REQUEST);
 
-        }
     }
 
     @Override
@@ -133,4 +126,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public boolean onLongClick(View view) {
+            Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(i, GALLERY_REQUEST);
+
+        return false;
+    }
 }

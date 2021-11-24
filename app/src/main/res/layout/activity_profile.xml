@@ -6,43 +6,36 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/wavy"
     tools:context=".ProfileActivity">
 
-    <TextView
-        android:layout_width="250dp"
-        android:layout_height="100dp"
-        android:textColor="@color/purple"
-        android:gravity="center"
-        android:textSize="24dp"
-        android:text="Welcome to your profile!"
-        android:textStyle="bold"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/button_bg2"/>
+    <RelativeLayout
+        android:padding="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/purple"
-        android:text="take picture"
-        android:textStyle="bold"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/button_bg2"
-        android:id="@+id/buttonCamera"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="200dp"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="Welcome to your Dashboard ;)"
+            android:textColor="@color/purple"
+            android:textStyle="bold"
+            android:textSize="26dp"/>
 
-    <Button
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:text="open gallery"
-        android:textStyle="bold"
-        android:textColor="@color/purple"
-        android:background="@drawable/button_bg2"
-        android:id="@+id/buttonGallery"/>
+        <Button
+            android:id="@+id/buttonCamera"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/profile"/>
 
-    <ImageView
-        android:layout_marginTop="50dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageViewProfile"
-       />
+        <ImageView
+            android:layout_marginTop="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageViewProfile"
+            />
+
+    </RelativeLayout>
 </LinearLayout>
