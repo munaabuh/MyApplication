@@ -5,6 +5,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -19,6 +22,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements DialogInterface.OnClickListener{
 
+    private static final int NOTIFICATION_REMINDER_NIGHT = 1;
     private Intent musicIntent;
     private Button profileButton;
     private CardView mentalHealthCard, mindfulnessCard;
@@ -37,6 +41,13 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         //this will start the service which in turn will start the music
         musicIntent = new Intent(this, MusicService.class);
         startService(musicIntent);
+
+        Intent notifyIntent = new Intent(this,NotificationReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast
+                (this, NOTIFICATION_REMINDER_NIGHT, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,  System.currentTimeMillis(),
+                1000 * 60 * 60 * 24, pendingIntent);
 
     }
 
