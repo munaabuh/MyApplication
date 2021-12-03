@@ -10,34 +10,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class MindfulnessActivity extends AppCompatActivity implements DialogInterface.OnClickListener{
+public class MindfulnessActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mindfulness2);
-    }
-
-    @Override
-    public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Are you sure?");
-        builder.setCancelable(false);
-        builder.setPositiveButton("Yes", this);
-        builder.setNegativeButton("No", this);
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
-
-    @Override
-    public void onClick(DialogInterface dialogInterface, int i) {
-        if(i == dialogInterface.BUTTON_POSITIVE){
-            super.onBackPressed();
-            dialogInterface.cancel();
-        }
-        if(i==dialogInterface.BUTTON_NEGATIVE){
-            dialogInterface.cancel();
-        }
     }
 
     @Override

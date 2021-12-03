@@ -181,19 +181,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="380dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/list_d1" />
+           <ImageView
+               android:layout_width="380dp"
+               android:layout_height="50dp"
+               android:layout_marginLeft="18dp"
+               android:layout_marginTop="20dp"
+               android:layout_marginRight="20dp"
+               android:background="@drawable/list_d1" />
 
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginLeft="50dp"
-               android:layout_marginTop="20dp"
+               android:layout_marginTop="30dp"
                android:text="Anxiety"
                android:textColor="@color/darkBlue"
                android:textSize="25dp"
@@ -286,16 +286,16 @@
            <ImageView
                android:layout_width="380dp"
                android:layout_height="50dp"
-               android:layout_marginTop="10dp"
                android:layout_marginLeft="18dp"
+               android:layout_marginTop="20dp"
                android:layout_marginRight="20dp"
-               android:background="@drawable/list_d4"/>
+               android:background="@drawable/list_d4" />
 
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginLeft="50dp"
-               android:layout_marginTop="20dp"
+               android:layout_marginTop="30dp"
                android:text="Overthinking"
                android:textColor="@color/darkGreen"
                android:textSize="25dp"
@@ -388,8 +388,8 @@
         <ImageView
             android:layout_width="380dp"
             android:layout_height="50dp"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="18dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/list_d3" />
 
@@ -397,7 +397,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:text="Stress"
             android:textColor="@color/darkPink"
             android:textSize="25dp"
@@ -488,19 +488,19 @@
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
 
-           <ImageView
-               android:layout_width="380dp"
-               android:layout_height="50dp"
-               android:layout_marginTop="10dp"
-               android:layout_marginLeft="18dp"
-               android:layout_marginRight="20dp"
-               android:background="@drawable/list_d2"/>
+          <ImageView
+              android:layout_width="380dp"
+              android:layout_height="50dp"
+              android:layout_marginLeft="18dp"
+              android:layout_marginTop="20dp"
+              android:layout_marginRight="20dp"
+              android:background="@drawable/list_d2" />
 
           <TextView
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_marginLeft="50dp"
-              android:layout_marginTop="20dp"
+              android:layout_marginTop="30dp"
               android:text="Depression"
               android:textColor="@color/purple"
               android:textSize="25dp"

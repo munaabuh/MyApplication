@@ -22,7 +22,7 @@ import android.widget.Toast;
 import java.io.FileNotFoundException;
 import java.nio.channels.InterruptedByTimeoutException;
 
-public class ProfileActivity extends AppCompatActivity implements View.OnClickListener,DialogInterface.OnClickListener, View.OnLongClickListener {
+public class ProfileActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
 
     //request for camera activity result
     private static final int CAMERA_REQUEST = 0;
@@ -80,28 +80,6 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                     e.printStackTrace();
                 }
             }
-        }
-    }
-
-    @Override
-    public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Are you sure?");
-        builder.setCancelable(false);
-        builder.setPositiveButton("Yes", this);
-        builder.setNegativeButton("No", this);
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
-
-    @Override
-    public void onClick(DialogInterface dialogInterface, int i) {
-        if(i == dialogInterface.BUTTON_POSITIVE){
-            super.onBackPressed();
-            dialogInterface.cancel();
-        }
-        if(i==dialogInterface.BUTTON_NEGATIVE){
-            dialogInterface.cancel();
         }
     }
 

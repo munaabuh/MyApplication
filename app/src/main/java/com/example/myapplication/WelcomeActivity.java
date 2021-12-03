@@ -17,10 +17,10 @@ import android.widget.Toast;
 public class WelcomeActivity extends AppCompatActivity implements DialogInterface.OnClickListener{
 
     private Button buttonLogIn, buttonSignUp;
-    private TextView textViewWelcome, textViewNote_1, textViewNote_2, textViewNote_3;
+    private TextView textViewWelcome, textViewNote_1, textViewNote_2;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
@@ -31,7 +31,7 @@ public class WelcomeActivity extends AppCompatActivity implements DialogInterfac
         textViewWelcome = findViewById(R.id.textViewWelcome);
         textViewNote_1 = findViewById(R.id.textViewNote_1);
 
-        textViewNote_3 = findViewById(R.id.textViewNote_3);
+        textViewNote_2 = findViewById(R.id.textViewNote_2);
 
 
 
@@ -71,7 +71,7 @@ public class WelcomeActivity extends AppCompatActivity implements DialogInterfac
 
     @Override
     //inflates the design of the required menu on top of the activity
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
