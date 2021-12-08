@@ -19,6 +19,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.FileNotFoundException;
 import java.nio.channels.InterruptedByTimeoutException;
 
@@ -27,12 +31,15 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     //request for camera activity result
     private static final int CAMERA_REQUEST = 0;
     private static final int GALLERY_REQUEST = 1;
+
     //attributes
     private Button buttonCamera;
     private ImageView imageViewProfile;
 
     //for picture of camera
     private Bitmap picture;
+
+    private FirebaseAuth maFirebaseAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,17 +52,21 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         buttonCamera.setOnClickListener(this);
         buttonCamera.setOnLongClickListener(this);
 
-
         imageViewProfile = findViewById(R.id.imageViewProfile);
 
+        //write a message to the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
+        String UID = maFirebaseAuth.getUid();
+        DatabaseReference myRef = database.getReference("users/"+UID);
+
+        //todo change this into the object you need to use (reminder / appointemnt)
+        myRef.push().setValue(new Item(2,true,"this is my first item",7));
     }
 
     @Override
     public void onClick(View view) {
-
             Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(i, CAMERA_REQUEST);
-
     }
 
     @Override

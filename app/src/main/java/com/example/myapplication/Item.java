@@ -7,6 +7,9 @@ public class Item {
     private String description;
     private int resid; //image id to be loaded
 
+    public Item() {
+    }
+
     public Item(int amount, boolean isHappy, String description, int resid) {
 
         this.resid = resid;
