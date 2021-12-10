@@ -33,13 +33,14 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     private static final int GALLERY_REQUEST = 1;
 
     //attributes
-    private Button buttonCamera;
     private ImageView imageViewProfile;
+    private Button buttonCamera, remindersButton;
 
     //for picture of camera
     private Bitmap picture;
 
-    private FirebaseAuth maFirebaseAuth = FirebaseAuth.getInstance();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,15 +53,11 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         buttonCamera.setOnClickListener(this);
         buttonCamera.setOnLongClickListener(this);
 
+        remindersButton = findViewById(R.id.remindersButton);
+
         imageViewProfile = findViewById(R.id.imageViewProfile);
 
-        //write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
-        String UID = maFirebaseAuth.getUid();
-        DatabaseReference myRef = database.getReference("users/"+UID);
 
-        //todo change this into the object you need to use (reminder / appointemnt)
-        myRef.push().setValue(new Item(2,true,"this is my first item",7));
     }
 
     @Override
@@ -121,5 +118,10 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             startActivityForResult(i, GALLERY_REQUEST);
 
         return false;
+    }
+
+    public void reminders(View view){
+        Intent intent = new Intent(this, ArrayListActivity.class);
+        startActivity(intent);
     }
 }

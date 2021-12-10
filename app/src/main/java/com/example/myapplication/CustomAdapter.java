@@ -48,7 +48,7 @@ public class CustomAdapter extends ArrayAdapter<Item>{
                     Toast.makeText(context,"This item was added to shopping cart", Toast.LENGTH_LONG).show();
                 }
             });
-            imageView.setImageResource(item.getResid());
+            //imageView.setImageResource(item.getResid());
             textViewDescription.setText(item.getDescription());
 
         }

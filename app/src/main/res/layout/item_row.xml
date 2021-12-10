@@ -14,9 +14,11 @@
 
         <ImageView
             android:id="@+id/imageItem"
-            android:layout_width="150dp"
+            android:layout_width="60dp"
             android:layout_height="150dp"
-            android:src="@drawable/blue" />
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/reminder_icon" />
 
         <TextView
         android:textSize="24sp"
@@ -24,12 +26,14 @@
         android:text="description"
         android:id="@+id/textViewDesc"
         android:layout_width="120dp"
+        android:layout_marginRight="60dp"
         android:layout_height="wrap_content"/>
 
     <Button
         android:text="Add"
         android:id="@+id/itemButton"
         android:layout_width="100dp"
+        android:layout_marginRight="40dp"
         android:layout_height="wrap_content"/>
 
 </LinearLayout>
