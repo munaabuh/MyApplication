@@ -3,7 +3,7 @@ package com.example.myapplication;
 import java.sql.Time;
 import java.util.Date;
 
-public class appointment {
+public class Appointment {
 
     //attributes
     private Date date;
@@ -12,11 +12,11 @@ public class appointment {
     private Therapist therapist;
 
     //default constructor
-    public appointment() {
+    public Appointment() {
     }
 
     //constructor
-    public appointment(Date date, Time time, String summary, Therapist therapist) {
+    public Appointment(Date date, Time time, String summary, Therapist therapist) {
         this.date = date;
         this.time = time;
         this.summary = summary;

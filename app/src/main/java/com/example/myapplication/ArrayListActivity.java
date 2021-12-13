@@ -45,15 +45,16 @@ public class ArrayListActivity extends AppCompatActivity{
 
         //adds an item to the FB under the reference specified
         //TODO change this into the object you need to use (reminder / appointment)
+        //TODO alter the code so the data is uploaded to the firebase only when the user clicks the button
         myRef.push().setValue(new Item(2,true,"this is my first item",R.id.imageItem));
 
        list =  new ArrayList<>();
-    /*    list.add(new Item(50, true, "This is my first Item", R.drawable.blue));
-        list.add(new Item(50, true, "This is my second Item", R.drawable.blue));
-        list.add(new Item(50, true, "This is my third Item", R.drawable.blue));
-        list.add(new Item(50, true, "This is my forth Item", R.drawable.blue));
-        list.add(new Item(50, true, "This is my fifth Item", R.drawable.blue));
-*/
+       /*list.add(new Item(50, true, "This is my first Item", R.drawable.blue));
+       list.add(new Item(50, true, "This is my second Item", R.drawable.blue));
+       list.add(new Item(50, true, "This is my third Item", R.drawable.blue));
+       list.add(new Item(50, true, "This is my forth Item", R.drawable.blue));
+       list.add(new Item(50, true, "This is my fifth Item", R.drawable.blue));*/
+
         //reference to the list view so it can be programmed
         myListView = findViewById(R.id.mylistview);
 

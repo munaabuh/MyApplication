@@ -34,9 +34,16 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.profileButton);
+        profileButton= findViewById(R.id.profileButton);
+
         findViewById(R.id.mindfulnessCard);
-        findViewById(R.id.mentalHealthCard);
+        mentalHealthCard= findViewById(R.id.mentalHealthCard);
+        mentalHealthCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         //this will start the service which in turn will start the music
         musicIntent = new Intent(this, MusicService.class);
@@ -48,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         AlarmManager alarmManager = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,  System.currentTimeMillis(),
                 1000 * 60 * 60 * 24, pendingIntent);
+
 
     }
 
@@ -101,46 +109,9 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
 
     }
 
-    public void mentalHealth(View view){
 
-        Intent intent = new Intent(this, MentalHealthActivity.class);
-        startActivity(intent);
 
-    }
 
-   public void  mindfulness(View view){
 
-        Intent intent = new Intent(this,MindfulnessActivity.class);
-        startActivity(intent);
-
-   }
-
-   public void anxiety(View view){
-
-        Intent intent = new Intent(this,AnxietyActivity.class);
-        startActivity(intent);
-
-   }
-
-   public void overthinking(View view){
-
-        Intent intent = new Intent(this, OverthinkingActivity.class);
-        startActivity(intent);
-
-   }
-
-   public void stress(View view){
-
-        Intent intent = new Intent(this, StressActivity.class);
-        startActivity(intent);
-
-   }
-
-   public void depression(View view){
-
-        Intent intent = new Intent(this, DepressionActivity.class);
-        startActivity(intent);
-
-   }
 
 }

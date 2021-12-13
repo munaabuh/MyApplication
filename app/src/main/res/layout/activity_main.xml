@@ -75,7 +75,6 @@
                 app:cardCornerRadius="20dp"
                 android:layout_width="350dp"
                 android:layout_height="250dp"
-                android:onClick="mentalHealth"
                 android:textAlignment="center"
                 android:layout_marginLeft="10dp"
                 android:id="@+id/mentalHealthCard"
@@ -104,7 +103,6 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="350dp"
                 app:cardCornerRadius="20dp"
-                android:onClick="mindfulness"
                 android:layout_height="250dp"
                 android:layout_marginLeft="10dp"
                 android:id="@+id/mindfulnessCard"
@@ -177,7 +175,6 @@
        </RelativeLayout>
 
        <RelativeLayout
-        android:onClick="anxiety"
         android:id="@+id/anxietyCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -218,6 +215,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
+                   android:id="@+id/anxietyCard1"
                    app:cardBackgroundColor="@color/cream">
 
                    <TextView
@@ -239,6 +237,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
+                   android:id="@+id/anxietyCard2"
                    app:cardBackgroundColor="@color/cream">
 
                    <TextView
@@ -260,6 +259,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
+                   android:id="@+id/anxietyCard3"
                    app:cardBackgroundColor="@color/cream">
 
                    <TextView
@@ -279,7 +279,6 @@
        </HorizontalScrollView>
 
        <RelativeLayout
-           android:onClick="overthinking"
            android:id="@+id/overthinkingCard"
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
@@ -320,6 +319,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
+                   android:id="@+id/overthinkingCard1"
                    app:cardBackgroundColor="@color/cream">
 
                    <TextView
@@ -341,6 +341,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
+                   android:id="@+id/overthinkingCard2"
                    app:cardBackgroundColor="@color/cream">
 
                    <TextView
@@ -362,6 +363,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
+                   android:id="@+id/overthinkingCard3"
                    app:cardBackgroundColor="@color/cream">
 
                    <TextView
@@ -381,7 +383,6 @@
        </HorizontalScrollView>
 
     <RelativeLayout
-           android:onClick="stress"
            android:id="@+id/stressCard"
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
@@ -422,6 +423,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
+                   android:id="@+id/stressCard1"
                    app:cardBackgroundColor="@color/cream">
 
                    <TextView
@@ -443,6 +445,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
+                   android:id="@+id/stressCard2"
                    app:cardBackgroundColor="@color/cream">
 
 
@@ -465,6 +468,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
+                   android:id="@+id/stressCard3"
                    app:cardBackgroundColor="@color/cream">
 
                    <TextView
@@ -484,7 +488,6 @@
        </HorizontalScrollView>
 
       <RelativeLayout
-           android:onClick="depression"
            android:id="@+id/depressionCard"
            android:layout_width="match_parent"
            android:layout_height="wrap_content">

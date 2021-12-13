@@ -8,16 +8,16 @@ public class Reminder {
     //attributes
     private Date date;
     private Time time;
-    private String description;
+    private Appointment appointment;
 
     //default constructor
     public Reminder() {}
 
     //constructor
-    public Reminder(Date date, Time time, String description) {
+    public Reminder(Date date, Time time, Appointment appointment) {
         this.date = date;
         this.time = time;
-        this.description = description;
+        this.appointment = appointment;
     }
 
     //getters & setters
@@ -37,11 +37,11 @@ public class Reminder {
         this.time = time;
     }
 
-    public String getDescription() {
-        return description;
+    public Appointment getAppointment() {
+        return appointment;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAppointment(Appointment appointment) {
+        this.appointment = appointment;
     }
 }

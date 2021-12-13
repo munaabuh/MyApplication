@@ -31,7 +31,7 @@ public class NotificationIntentService extends IntentService {
     @Override
     protected void onHandleIntent(Intent intent) {
         Notification.Builder noBuilder = new Notification.Builder(this);
-        //todo need to change the notification title
+        //TODO change the notification title
         noBuilder.setContentTitle("this is the notification title");
         noBuilder.setContentText("this is the notification body text");
         noBuilder.setSmallIcon(R.drawable.ic_snowflake);

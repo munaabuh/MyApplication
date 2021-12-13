@@ -11,10 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+        <activity
+            android:name=".DetailActivity"
+            android:exported="true" />
 
         <service
             android:name=".NotificationIntentService"
-            android:exported="false"></service>
+            android:exported="false" />
 
         <activity
             android:name=".DepressionActivity"
