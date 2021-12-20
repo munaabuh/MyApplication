@@ -528,6 +528,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
+                   android:id="@+id/depressionCauses"
                    app:cardBackgroundColor="@color/cream">
 
                    <TextView
@@ -549,6 +550,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
+                    android:id="@+id/depressionDiagnosis"
                    app:cardBackgroundColor="@color/cream">
 
                    <TextView
@@ -570,6 +572,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
+                   android:id="@+id/depressionTreatment"
                    app:cardBackgroundColor="@color/cream">
 
 

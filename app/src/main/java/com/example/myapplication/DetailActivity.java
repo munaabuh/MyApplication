@@ -12,11 +12,11 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         String category = getIntent().getStringExtra("category");
-        loadConntentByCategory(category);
+        loadContentByCategory(category);
 
     }
-    public void loadConntentByCategory(String category){
-        if(category.equals("mentalhealth")){}
+    public void loadContentByCategory(String category){
+        if(category.equals("mentalHealth")){}
         else if(category.equals("mindfulness")){}
         else if(category.equals("anxiety")){}
         else if(category.equals("anxietyCauses")){}
@@ -30,6 +30,10 @@ public class DetailActivity extends AppCompatActivity {
         else if (category.equals("stressCauses")){}
         else if (category.equals("stressTreatment")){}
         else if(category.equals("stressImpact")){}
+        else if(category.equals("depression")){}
+        else if(category.equals("depressionCauses")){}
+        else if(category.equals("depressionDiagnosis")){}
+        else if(category.equals("depressionTreatment")){}
 
     }
 }

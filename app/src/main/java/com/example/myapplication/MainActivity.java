@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
     private Button profileButton;
     private CardView mentalHealthCard, mindfulnessCard;
     private RelativeLayout anxietyCard, anxietyCauses, anxietyTreatment, anxietyImpact,overthinkingCard, overthinkingCauses,
-                           overthinkingTreatment,overthinkingImpact,stressCard, stressCauses,stressTreatment,stressImpact;
+                           overthinkingTreatment,overthinkingImpact,stressCard, stressCauses,stressTreatment,stressImpact,
+                           depressionCard,depressionCauses,depressionDiagnosis,depressionTreatment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, DetailActivity.class);
-                i.putExtra("category","mentalhealth");
+                i.putExtra("category","mentalHealth");
                 startActivity(i);
             }
         });
@@ -174,6 +175,46 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, DetailActivity.class);
                 i.putExtra("category", "stressImpact");
+                startActivity(i);
+            }
+        });
+
+        depressionCard = findViewById(R.id.depressionCard);
+        depressionCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category", "depression");
+                startActivity(i);
+            }
+        });
+
+        depressionCauses = findViewById(R.id.depressionCauses);
+        depressionCauses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category","depressionCauses");
+                startActivity(i);
+            }
+        });
+
+        depressionDiagnosis = findViewById(R.id.depressionDiagnosis);
+        depressionDiagnosis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category", "depressionDiagnosis");
+                startActivity(i);
+            }
+        });
+
+        depressionTreatment = findViewById(R.id.depressionTreatment);
+        depressionTreatment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category","depressionTreatment");
                 startActivity(i);
             }
         });
