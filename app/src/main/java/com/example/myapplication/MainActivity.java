@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
     private Intent musicIntent;
     private Button profileButton;
     private CardView mentalHealthCard, mindfulnessCard;
-    private RelativeLayout anxietyCard, overthinkingCard, stressCard, depressionCard;
+    private RelativeLayout anxietyCard, anxietyCauses, anxietyTreatment, anxietyImpact,overthinkingCard, overthinkingCauses,
+                           overthinkingTreatment,overthinkingImpact,stressCard, stressCauses,stressTreatment,stressImpact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +37,144 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
 
         profileButton= findViewById(R.id.profileButton);
 
-        findViewById(R.id.mindfulnessCard);
         mentalHealthCard= findViewById(R.id.mentalHealthCard);
         mentalHealthCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category","mentalhealth");
+                startActivity(i);
+            }
+        });
 
+        mindfulnessCard =  findViewById(R.id.mindfulnessCard);
+        mindfulnessCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category", "mindfulness");
+                startActivity(i);
+            }
+        });
+
+        anxietyCard= findViewById(R.id.anxietyCard);
+        anxietyCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category","anxiety");
+                startActivity(i);
+            }
+        });
+
+        anxietyCauses = findViewById(R.id.anxietyCauses);
+        anxietyCauses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category", "anxietyCauses");
+                startActivity(i);
+            }
+        });
+
+        anxietyTreatment = findViewById(R.id.anxietyTreatment);
+        anxietyTreatment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category", "anxietyTreatment");
+                startActivity(i);
+            }
+        });
+
+        anxietyImpact = findViewById(R.id.anxietyImpact);
+        anxietyImpact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category", "anxietyImpact");
+                startActivity(i);
+
+            }
+        });
+
+        overthinkingCard = findViewById(R.id.overthinkingCard);
+        overthinkingCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category", "overthinking");
+                startActivity(i);
+            }
+        });
+
+        overthinkingCauses = findViewById(R.id.overthinkingCauses);
+        overthinkingCauses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category", "overthinkingCauses");
+                startActivity(i);
+            }
+        });
+
+        overthinkingTreatment = findViewById(R.id.overthinkingTreatment);
+        overthinkingTreatment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i= new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category", "overthinkingTreatment");
+                startActivity(i);
+            }
+        });
+
+        overthinkingImpact = findViewById(R.id.overthinkingImpact);
+        overthinkingImpact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category", "overthinkingImpact");
+                startActivity(i);
+            }
+        });
+
+        stressCard= findViewById(R.id.stressCard);
+        stressCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i= new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category", "stress");
+                startActivity(i);
+            }
+        });
+
+        stressCauses = findViewById(R.id.stressCauses);
+        stressCauses.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category", "stressCauses");
+                startActivity(i);
+            }
+        });
+
+        stressTreatment = findViewById(R.id.stressTreatment);
+        stressTreatment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category", "stressTreatment");
+                startActivity(i);
+            }
+        });
+
+        stressImpact = findViewById(R.id.stressImpact);
+        stressImpact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category", "stressImpact");
+                startActivity(i);
             }
         });
 
