@@ -143,8 +143,9 @@
                     android:layout_marginLeft="25dp"/>
 
                 <TextView
-                    android:text="Therapy"
+                    android:text="Therapy and Treatment"
                     android:textSize="28dp"
+                    android:gravity="center"
                     android:textStyle="bold"
                     android:layout_marginTop="90dp"
                     android:layout_marginLeft="200dp"
@@ -215,7 +216,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
-                   android:id="@+id/anxietyCauses"
+                   android:id="@+id/anxietyTypes"
                    app:cardBackgroundColor="@color/cream">
 
                    <TextView
@@ -223,10 +224,32 @@
                        android:textStyle="bold"
                        android:gravity="center"
                        android:layout_width="150dp"
-                       android:layout_marginTop="70dp"
+                       android:layout_marginTop="40dp"
                        android:textColor="@color/purple"
                        android:layout_height="wrap_content"
-                       android:text="Why do we have anxiety?"/>
+                       android:text="What are the different types of anxiety?"/>
+
+               </androidx.cardview.widget.CardView>
+
+               <androidx.cardview.widget.CardView
+                   android:id="@+id/anxietyCauses"
+                   android:layout_width="150dp"
+                   android:layout_height="200dp"
+                   android:layout_marginLeft="10dp"
+                   android:layout_marginTop="20dp"
+                   android:textAlignment="center"
+                   app:cardBackgroundColor="@color/cream"
+                   app:cardCornerRadius="20dp">
+
+                   <TextView
+                       android:layout_width="150dp"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="60dp"
+                       android:gravity="center"
+                       android:text="Symptoms and Causes of anxiety?"
+                       android:textColor="@color/purple"
+                       android:textSize="24dp"
+                       android:textStyle="bold" />
 
                </androidx.cardview.widget.CardView>
 
@@ -248,29 +271,7 @@
                        android:layout_marginTop="70dp"
                        android:textColor="@color/purple"
                        android:layout_height="wrap_content"
-                       android:text="How can we treat anxiety?"/>
-
-               </androidx.cardview.widget.CardView>
-
-               <androidx.cardview.widget.CardView
-                   app:cardCornerRadius="20dp"
-                   android:layout_width="150dp"
-                   android:layout_height="200dp"
-                   android:textAlignment="center"
-                   android:layout_marginTop="20dp"
-                   android:layout_marginLeft="10dp"
-                   android:id="@+id/anxietyImpact"
-                   app:cardBackgroundColor="@color/cream">
-
-                   <TextView
-                       android:textSize="24dp"
-                       android:textStyle="bold"
-                       android:gravity="center"
-                       android:layout_width="150dp"
-                       android:layout_marginTop="70dp"
-                       android:textColor="@color/purple"
-                       android:layout_height="wrap_content"
-                       android:text="How are we affected by anxiety?"/>
+                       android:text="How to treat anxiety?"/>
 
                </androidx.cardview.widget.CardView>
 
@@ -279,7 +280,7 @@
        </HorizontalScrollView>
 
        <RelativeLayout
-           android:id="@+id/overthinkingCard"
+           android:id="@+id/emotionalEatingCard"
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
 
@@ -296,8 +297,8 @@
                android:layout_height="wrap_content"
                android:layout_marginLeft="50dp"
                android:layout_marginTop="30dp"
-               android:text="Overthinking"
-               android:textColor="@color/darkGreen"
+               android:text="Emotional Eating"
+               android:textColor="@color/brown"
                android:textSize="25dp"
                android:textStyle="bold" />
 
@@ -319,7 +320,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
-                   android:id="@+id/overthinkingCauses"
+                   android:id="@+id/emotionalEatingSigns"
                    app:cardBackgroundColor="@color/cream">
 
                    <TextView
@@ -328,7 +329,7 @@
                        android:gravity="center"
                        android:layout_width="150dp"
                        android:layout_marginTop="70dp"
-                       android:text="Why do we overthink?"
+                       android:text="Is my eating emotional?"
                        android:textColor="@color/purple"
                        android:layout_height="wrap_content"/>
 
@@ -341,7 +342,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
-                   android:id="@+id/overthinkingTreatment"
+                   android:id="@+id/emotionalEatingCauses"
                    app:cardBackgroundColor="@color/cream">
 
                    <TextView
@@ -349,10 +350,10 @@
                        android:textStyle="bold"
                        android:gravity="center"
                        android:layout_width="150dp"
-                       android:layout_marginTop="70dp"
+                       android:layout_marginTop="50dp"
                        android:textColor="@color/purple"
                        android:layout_height="wrap_content"
-                       android:text="How do we treat overthinking?"/>
+                       android:text="Why is my eating emotional?"/>
 
                </androidx.cardview.widget.CardView>
 
@@ -363,7 +364,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
-                   android:id="@+id/overthinkingImpact"
+                   android:id="@+id/emotionalEatingTreatment"
                    app:cardBackgroundColor="@color/cream">
 
                    <TextView
@@ -371,10 +372,10 @@
                        android:textStyle="bold"
                        android:gravity="center"
                        android:layout_width="150dp"
-                       android:layout_marginTop="70dp"
+                       android:layout_marginTop="40dp"
                        android:textColor="@color/purple"
                        android:layout_height="wrap_content"
-                       android:text="How are we affected by overthinking?"/>
+                       android:text="How can I stop my emotional eating?"/>
 
                </androidx.cardview.widget.CardView>
 
@@ -423,7 +424,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
-                   android:id="@+id/stressCauses"
+                   android:id="@+id/stressTypes"
                    app:cardBackgroundColor="@color/cream">
 
                    <TextView
@@ -431,10 +432,33 @@
                        android:textStyle="bold"
                        android:gravity="center"
                        android:layout_width="150dp"
-                       android:layout_marginTop="70dp"
+                       android:layout_marginTop="40dp"
                        android:textColor="@color/purple"
-                       android:text=" Why do we stress?"
+                       android:text=" What are the different types of stress?"
                        android:layout_height="wrap_content"/>
+
+               </androidx.cardview.widget.CardView>
+
+               <androidx.cardview.widget.CardView
+                   android:layout_width="150dp"
+                   app:cardCornerRadius="20dp"
+                   android:layout_height="200dp"
+                   android:textAlignment="center"
+                   android:layout_marginTop="20dp"
+                   android:layout_marginLeft="10dp"
+                   android:id="@+id/stressCauses"
+                   app:cardBackgroundColor="@color/cream">
+
+
+                   <TextView
+                       android:textSize="24dp"
+                       android:textStyle="bold"
+                       android:gravity="center"
+                       android:layout_width="150dp"
+                       android:layout_marginTop="30dp"
+                       android:textColor="@color/purple"
+                       android:layout_height="wrap_content"
+                       android:text="Causes, Symptoms and complications of stress"/>
 
                </androidx.cardview.widget.CardView>
 
@@ -448,38 +472,15 @@
                    android:id="@+id/stressTreatment"
                    app:cardBackgroundColor="@color/cream">
 
-
                    <TextView
                        android:textSize="24dp"
                        android:textStyle="bold"
                        android:gravity="center"
                        android:layout_width="150dp"
-                       android:layout_marginTop="70dp"
+                       android:layout_marginTop="60dp"
                        android:textColor="@color/purple"
                        android:layout_height="wrap_content"
-                       android:text="How can we treat stress?"/>
-
-               </androidx.cardview.widget.CardView>
-
-               <androidx.cardview.widget.CardView
-                   android:layout_width="150dp"
-                   app:cardCornerRadius="20dp"
-                   android:layout_height="200dp"
-                   android:textAlignment="center"
-                   android:layout_marginTop="20dp"
-                   android:layout_marginLeft="10dp"
-                   android:id="@+id/stressImpact"
-                   app:cardBackgroundColor="@color/cream">
-
-                   <TextView
-                       android:textSize="24dp"
-                       android:textStyle="bold"
-                       android:gravity="center"
-                       android:layout_width="150dp"
-                       android:layout_marginTop="70dp"
-                       android:textColor="@color/purple"
-                       android:layout_height="wrap_content"
-                       android:text="How are we impacted by stress?"/>
+                       android:text="Diagnosis and treatment"/>
 
                </androidx.cardview.widget.CardView>
 
@@ -528,7 +529,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
-                   android:id="@+id/depressionCauses"
+                   android:id="@+id/depressionTypes"
                    app:cardBackgroundColor="@color/cream">
 
                    <TextView
@@ -536,10 +537,10 @@
                        android:textStyle="bold"
                        android:gravity="center"
                        android:layout_width="150dp"
-                       android:layout_marginTop="70dp"
+                       android:layout_marginTop="40dp"
                        android:textColor="@color/purple"
                        android:layout_height="wrap_content"
-                       android:text="What causes depression?"/>
+                       android:text="What are the different types of depression?"/>
 
                </androidx.cardview.widget.CardView>
 
@@ -550,7 +551,7 @@
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
-                    android:id="@+id/depressionDiagnosis"
+                    android:id="@+id/depressionCauses"
                    app:cardBackgroundColor="@color/cream">
 
                    <TextView
@@ -558,10 +559,10 @@
                        android:textStyle="bold"
                        android:gravity="center"
                        android:layout_width="150dp"
-                       android:layout_marginTop="70dp"
+                       android:layout_marginTop="40dp"
                        android:textColor="@color/purple"
                        android:layout_height="wrap_content"
-                       android:text="How to diagnose depression?"/>
+                       android:text="Signs, symptoms and causes of depression"/>
 
                 </androidx.cardview.widget.CardView>
 
@@ -581,10 +582,10 @@
                        android:textStyle="bold"
                        android:gravity="center"
                        android:layout_width="150dp"
-                       android:layout_marginTop="70dp"
+                       android:layout_marginTop="60dp"
                        android:textColor="@color/purple"
                        android:layout_height="wrap_content"
-                       android:text="How to treat depression?"/>
+                       android:text="Diagnosis and treatment"/>
 
                </androidx.cardview.widget.CardView>
 
