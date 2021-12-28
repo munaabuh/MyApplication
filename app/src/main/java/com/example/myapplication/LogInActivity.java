@@ -78,26 +78,19 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
             login(editTextEmail.getText().toString(), editTextPassword.getText().toString());
 
             //startActivity(intent);
-
         }
-
-
-
     }
 
     public void signUp(View view){
-
         Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
     }
 
     @Override
     public boolean onLongClick(View view){
-
         editTextEmail.setText("");
         editTextPassword.setText("");
         return true;
-
     }
 
     @Override
@@ -142,6 +135,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
 
         return super.onOptionsItemSelected(item);
     }
+
    public void login(String email, String password){
        mAuth.signInWithEmailAndPassword(email, password)
                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -160,7 +154,6 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
                            Toast.makeText(LogInActivity.this, "Authentication failed.",
                                    Toast.LENGTH_SHORT).show();
                        }
-
                        // ...
                    }
                });

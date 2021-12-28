@@ -24,7 +24,7 @@
         android:textStyle="bold"
         android:textSize="24sp"
         android:gravity="center"
-        android:id="@+id/textViewWelcome"
+        android:id="@+id/welcomeNote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
@@ -36,7 +36,7 @@
         android:text="Have an account?"
         android:textSize="22sp"
         android:layout_gravity="center"
-        android:id="@+id/textViewNote_1"/>
+        android:id="@+id/logInNote"/>
 
 
     <Button
@@ -60,7 +60,7 @@
         android:textStyle="bold"
         android:textSize="22sp"
         android:layout_gravity="center"
-        android:id="@+id/textViewNote_2"/>
+        android:id="@+id/signUpNote"/>
 
     <Button
         android:layout_margin="15dp"

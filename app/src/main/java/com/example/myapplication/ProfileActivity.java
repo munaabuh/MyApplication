@@ -34,7 +34,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
     //attributes
     private ImageView imageViewProfile;
-    private Button buttonCamera, remindersButton;
+    private Button buttonCamera, reminderButton, therapistButton, appointmentButton;
 
     //for picture of camera
     private Bitmap picture;
@@ -53,7 +53,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         buttonCamera.setOnClickListener(this);
         buttonCamera.setOnLongClickListener(this);
 
-        remindersButton = findViewById(R.id.remindersButton);
+        reminderButton = findViewById(R.id.reminderButton);
+        therapistButton = findViewById(R.id.therapistsButton);
+        appointmentButton = findViewById(R.id.appointmentButton);
 
         imageViewProfile = findViewById(R.id.imageViewProfile);
 

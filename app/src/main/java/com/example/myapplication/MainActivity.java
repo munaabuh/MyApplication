@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
     private static final int NOTIFICATION_REMINDER_NIGHT = 1;
     private Intent musicIntent;
     private Button profileButton;
-    private CardView mentalHealthCard, mindfulnessCard, anxietyTypes, anxietyCauses, anxietyTreatment, emotionalEatingSigns,
+    private CardView mentalHealthCard, mindfulnessCard, therapyCard,anxietyTypes, anxietyCauses, anxietyTreatment, emotionalEatingSigns,
             emotionalEatingCauses, emotionalEatingTreatment, stressTypes, stressCauses, stressTreatment, depressionTypes, depressionCauses, depressionTreatment;
     private RelativeLayout anxietyCard, emotionalEatingCard, stressCard,depressionCard;
 
@@ -36,6 +36,16 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         setContentView(R.layout.activity_main);
 
         profileButton= findViewById(R.id.profileButton);
+
+        therapyCard = findViewById(R.id.therapyCard);
+        therapyCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, DetailActivity.class);
+                i.putExtra("category", "therapy and treatment");
+                startActivity(i);
+            }
+        });
 
         mentalHealthCard= findViewById(R.id.mentalHealthCard);
         mentalHealthCard.setOnClickListener(new View.OnClickListener() {

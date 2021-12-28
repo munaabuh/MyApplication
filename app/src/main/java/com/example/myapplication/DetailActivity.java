@@ -18,6 +18,7 @@ public class DetailActivity extends AppCompatActivity {
     public void loadContentByCategory(String category){
         if(category.equals("mentalHealth")){}
         else if(category.equals("mindfulness")){}
+        else if(category.equals("therapy and treatment")){}
         else if(category.equals("anxiety")){}
         else if(category.equals("anxietyTypes")){}
         else if(category.equals("anxietyCauses")){}
@@ -34,6 +35,5 @@ public class DetailActivity extends AppCompatActivity {
         else if(category.equals("depressionTypes")){}
         else if(category.equals("depressionCauses")){}
         else if(category.equals("depressionTreatment")){}
-
     }
 }
