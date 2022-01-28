@@ -3,20 +3,36 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.TextView;
+
+import java.io.File;
 
 public class DetailActivity extends AppCompatActivity {
+    private TextView tvFileContent;
+    private FileHandler fileHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        tvFileContent = findViewById(R.id.tvFileContent);
+
         String category = getIntent().getStringExtra("category");
         loadContentByCategory(category);
 
+        if(fileHandler!=null)
+            tvFileContent.setText(fileHandler.getContent());
+
+
+
     }
     public void loadContentByCategory(String category){
-        if(category.equals("mentalHealth")){}
+        if(category.equals("mentalHealth")){
+            fileHandler = new FileHandler("MentalHealth_txt", this);
+            fileHandler.readFile();
+
+        }
         else if(category.equals("mindfulness")){}
         else if(category.equals("therapy and treatment")){}
         else if(category.equals("anxiety")){}
