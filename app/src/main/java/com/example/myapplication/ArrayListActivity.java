@@ -51,7 +51,7 @@ public class ArrayListActivity extends AppCompatActivity{
        list =  new ArrayList<>();
 
         //reference to the list view so it can be programmed
-        myListView = findViewById(R.id.mylistview);
+        myListView = findViewById(R.id.myListView);
 
         //connect adapter with data
         myAdapter = new CustomAdapter(this, R.layout.item_row, list);

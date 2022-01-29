@@ -31,25 +31,78 @@ public class DetailActivity extends AppCompatActivity {
         if(category.equals("mentalHealth")){
             fileHandler = new FileHandler("MentalHealth_txt", this);
             fileHandler.readFile();
-
         }
-        else if(category.equals("mindfulness")){}
-        else if(category.equals("therapy and treatment")){}
-        else if(category.equals("anxiety")){}
-        else if(category.equals("anxietyTypes")){}
-        else if(category.equals("anxietyCauses")){}
-        else if(category.equals("anxietyTreatment")){}
-        else if(category.equals("emotionalEating")){}
-        else if(category.equals("emotionalEatingSigns")){}
-        else if(category.equals("emotionalEatingCauses")){}
-        else if(category.equals("emotionalEatingTreatment")){}
-        else if(category.equals("stress")){}
-        else if(category.equals("stressTypes")){}
-        else if (category.equals("stressCauses")){}
-        else if (category.equals("stressTreatment")){}
-        else if(category.equals("depression")){}
-        else if(category.equals("depressionTypes")){}
-        else if(category.equals("depressionCauses")){}
-        else if(category.equals("depressionTreatment")){}
+        else if(category.equals("mindfulness")){
+            fileHandler = new FileHandler("Mindfulness_txt", this);
+            fileHandler.readFile();
+        }
+        else if(category.equals("therapy and treatment")){
+            fileHandler = new FileHandler("Therapy_txt", this);
+            fileHandler.readFile();
+        }
+        else if(category.equals("anxiety")){
+            fileHandler = new FileHandler("Anxiety_txt", this);
+            fileHandler.readFile();
+        }
+        else if(category.equals("anxietyTypes")){
+            fileHandler = new FileHandler("A_Types_txt", this);
+            fileHandler.readFile();
+        }
+        else if(category.equals("anxietyCauses")){
+            fileHandler = new FileHandler("A_CausesAndSymptoms_txt", this);
+            fileHandler.readFile();
+        }
+        else if(category.equals("anxietyTreatment")){
+            fileHandler = new FileHandler("A_Treatment_txt", this);
+            fileHandler.readFile();
+        }
+        else if(category.equals("emotionalEating")){
+            fileHandler = new FileHandler("EmotionalEating_txt", this);
+            fileHandler.readFile();
+        }
+        else if(category.equals("emotionalEatingSigns")){
+            fileHandler = new FileHandler("E_Signs_txt", this);
+            fileHandler.readFile();
+        }
+        else if(category.equals("emotionalEatingCauses")){
+            fileHandler = new FileHandler("E_Causes_txt", this);
+            fileHandler.readFile();
+        }
+        else if(category.equals("emotionalEatingTreatment")){
+            fileHandler = new FileHandler("E_Treatment_txt", this);
+            fileHandler.readFile();
+        }
+        else if(category.equals("stress")){
+            fileHandler = new FileHandler("Stress_txt", this);
+            fileHandler.readFile();
+        }
+        else if(category.equals("stressTypes")){
+            fileHandler = new FileHandler("S_Types_txt", this);
+            fileHandler.readFile();
+        }
+        else if (category.equals("stressCauses")){
+            fileHandler = new FileHandler("S_Causes_Symptoms_Complications_txt", this);
+            fileHandler.readFile();
+        }
+        else if (category.equals("stressTreatment")){
+            fileHandler = new FileHandler("S_Diagnosis_Treatment_txt", this);
+            fileHandler.readFile();
+        }
+        else if(category.equals("depression")){
+            fileHandler = new FileHandler("Depression_txt", this);
+            fileHandler.readFile();
+        }
+        else if(category.equals("depressionTypes")){
+            fileHandler = new FileHandler("D_Types_txt", this);
+            fileHandler.readFile();
+        }
+        else if(category.equals("depressionCauses")){
+            fileHandler = new FileHandler("D_Signs_Symptoms_Causes_txt", this);
+            fileHandler.readFile();
+        }
+        else if(category.equals("depressionTreatment")){
+            fileHandler = new FileHandler("D_Diagnosis_Treatment_txt", this);
+            fileHandler.readFile();
+        }
     }
 }

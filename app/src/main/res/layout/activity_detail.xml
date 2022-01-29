@@ -11,5 +11,11 @@
         android:id="@+id/tvFileContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:text="TextView" />
+
+
+
 </ScrollView>
