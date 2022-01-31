@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,7 +25,7 @@ public class ArrayListActivity extends AppCompatActivity{
     //the object of the view - design
     private ListView myListView;
     //object containing the items to be displayed - Data
-    private ArrayList<Item> list;
+    private ArrayList<Reminder> list;
     //the object for the adapter connecting the data to the view
     private CustomAdapter myAdapter;
     //get instance of authentication project in FB console
@@ -39,7 +40,7 @@ public class ArrayListActivity extends AppCompatActivity{
         setContentView(R.layout.activity_array_list);
 
         String UID = maFirebaseAuth.getUid();
-        Toast.makeText(this, "UID:"+UID, Toast.LENGTH_LONG);
+        Toast.makeText(this, "UID:"+UID, Toast.LENGTH_LONG).show();
         //build reference fo user related data in real time database suing user ID
         DatabaseReference myRef = database.getReference("users/"+UID);
 
@@ -63,7 +64,7 @@ public class ArrayListActivity extends AppCompatActivity{
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-              myRef.push().setValue(new Item(2,true,"this is my first item",R.id.imageItem));
+            //  myRef.push().setValue(new Item(2,true,"this is my first item",R.id.imageItem));
               Toast.makeText(getApplicationContext(),"Item:" + list.get(i), Toast.LENGTH_LONG).show();
             }
         });
@@ -81,8 +82,8 @@ public class ArrayListActivity extends AppCompatActivity{
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    Item item1 = dataSnapshot.getValue((Item.class));
-                    list.add(item1);
+                    Reminder reminder1 = dataSnapshot.getValue((Reminder.class));
+                    list.add(reminder1);
                     myAdapter.notifyDataSetChanged();
                 }
             }
@@ -92,6 +93,12 @@ public class ArrayListActivity extends AppCompatActivity{
 
             }
         });
+
+    }
+
+    public void add(View view){
+        Intent i = new Intent(this, AddReminderActivity.class);
+        startActivity(i);
 
     }
 

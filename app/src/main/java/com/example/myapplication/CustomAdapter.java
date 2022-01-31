@@ -15,13 +15,13 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
-public class CustomAdapter extends ArrayAdapter<Item>{
+public class CustomAdapter extends ArrayAdapter<Reminder>{
 
     private int resource;
     private Context context;
 
 
-    public CustomAdapter(@NonNull Context context, int resource, @NonNull List<Item> objects) {
+    public CustomAdapter(@NonNull Context context, int resource, @NonNull List<Reminder> objects) {
         super(context, resource, objects);
         this.context = context;
         this.resource = resource; // this is the item row resource, the design for each row
@@ -37,19 +37,15 @@ public class CustomAdapter extends ArrayAdapter<Item>{
         View view = convertView;
         if(view == null)
             view = LayoutInflater.from(context).inflate(resource, parent, false);
-        Item item = getItem(position); //method from the android studio, not related to Item object (the class we created).
+        Reminder item = getItem(position); //method from the android studio, not related to Item object (the class we created).
         if(item != null){
-            ImageView imageView = view.findViewById(R.id.imageItem);
+
             TextView textViewDescription = view.findViewById(R.id.textViewDesc);
-            Button itemButton = view.findViewById(R.id.itemButton);
-            itemButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Toast.makeText(context,"This item was added to shopping cart", Toast.LENGTH_LONG).show();
-                }
-            });
+
+
             //imageView.setImageResource(item.getResid());
-            textViewDescription.setText(item.getDescription());
+            textViewDescription.setText(item.getTime() + item.getDate());
+
 
         }
         return view;

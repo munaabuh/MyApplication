@@ -6,42 +6,47 @@ import java.util.Date;
 public class Reminder {
 
     //attributes
-    private Date date;
-    private Time time;
-    private Appointment appointment;
+    private String date;
+    private String  time;
+    private String note;
 
     //default constructor
     public Reminder() {}
 
     //constructor
-    public Reminder(Date date, Time time, Appointment appointment) {
+    public Reminder(String date, String time, String note) {
         this.date = date;
         this.time = time;
-        this.appointment = appointment;
+        this.note = note;
     }
 
     //getters & setters
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public Time getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
-    public Appointment getAppointment() {
-        return appointment;
+    public String getNote() {
+        return note;
     }
 
-    public void setAppointment(Appointment appointment) {
-        this.appointment = appointment;
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    @Override
+    public String toString() {
+        return "Reminder:" + this.note + this.date + this.time;
     }
 }
