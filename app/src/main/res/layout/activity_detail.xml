@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cream"
     tools:context=".MentalHealthActivity">
 
 
     <TextView
         android:id="@+id/tvFileContent"
+        android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24dp"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:text="TextView" />
-
 
 
 </ScrollView>

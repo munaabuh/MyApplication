@@ -25,13 +25,14 @@ import java.util.Date;
 
 public class AddReminderActivity extends AppCompatActivity {
 
-    private Button add;
-    private EditText date_time,description;
-    private Reminder r = new Reminder();
     private Date date;
     private Time time;
-    private FirebaseDatabase database = FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
+    private Button add;
     DatabaseReference myRef;
+    private EditText date_time, notes;
+    private Reminder r = new Reminder();
+    private FirebaseDatabase database = FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,7 @@ public class AddReminderActivity extends AppCompatActivity {
         String user = FirebaseAuth.getInstance().getUid();
         myRef = database.getReference("users/" + user);
         add = findViewById(R.id.add);
-        description = findViewById(R.id.reminderDescription);
+        notes = findViewById(R.id.notes);
         date_time = findViewById(R.id.date_time);
         date_time.setInputType(InputType.TYPE_NULL);
         date_time.setOnClickListener(new View.OnClickListener() {
@@ -55,12 +56,9 @@ public class AddReminderActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), ArrayListActivity.class);
-
-
-                r = new Reminder(date.toString(), time.toString(), description.toString());
-                Log.d("REMINDER: ",r.toString());
+                r = new Reminder(date.toString(), time.toString(), notes.toString());
+                //Log.d("REMINDER: ",r.toString());
                 myRef.push().setValue(r);
-
                 startActivity(i);
             }
         });

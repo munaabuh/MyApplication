@@ -7,20 +7,22 @@ public class Reminder {
 
     //attributes
     private String date;
-    private String  time;
-    private String note;
+    private String time;
+    private String notes;
 
     //default constructor
     public Reminder() {}
 
     //constructor
-    public Reminder(String date, String time, String note) {
+    public Reminder(String date, String time, String notes) {
         this.date = date;
         this.time = time;
-        this.note = note;
+        this.notes = notes;
     }
 
-    //getters & setters
+   //getters & setters
+
+
     public String getDate() {
         return date;
     }
@@ -37,16 +39,17 @@ public class Reminder {
         this.time = time;
     }
 
-    public String getNote() {
-        return note;
+    public String getNotes() {
+        return notes;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 
     @Override
-    public String toString() {
-        return "Reminder:" + this.note + this.date + this.time;
+    public String toString(){
+        return "Reminder:" + " " + this.date
+                + " " + this.time + " " + this.notes;
     }
 }

@@ -27,26 +27,19 @@ public class CustomAdapter extends ArrayAdapter<Reminder>{
         this.resource = resource; // this is the item row resource, the design for each row
     }
 
-    /*
-
-     */
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-
         View view = convertView;
         if(view == null)
             view = LayoutInflater.from(context).inflate(resource, parent, false);
-        Reminder item = getItem(position); //method from the android studio, not related to Item object (the class we created).
-        if(item != null){
 
+        //method from the android studio, not related to Item object (the class we created).
+        Reminder reminder = getItem(position);
+
+        if(reminder != null) {
             TextView textViewDescription = view.findViewById(R.id.textViewDesc);
-
-
-            //imageView.setImageResource(item.getResid());
-            textViewDescription.setText(item.getTime() + item.getDate());
-
-
+            textViewDescription.setText(reminder.getTime() + reminder.getDate());
         }
         return view;
     }

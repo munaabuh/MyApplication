@@ -6,15 +6,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@color/cream"
     tools:context=".AddReminderActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="130dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="Add Training"
+        android:text="Add a Reminder"
+        android:gravity="center"
         android:textStyle="bold"
-        android:textColor="#00296b"
+        android:textColor="@color/purple"
         android:textSize="20dp"/>
 
     <EditText
@@ -27,12 +29,12 @@
         app:strokeWidth="3dp"
         android:layout_gravity="center"
         android:hint="select date and time"
-        android:textColorHint="#f4a261"
-        android:textColor="#f4a261"
+        android:textColorHint="@color/darkPink"
+        android:textColor="@color/darkPink"
         />
 
     <EditText
-        android:id="@+id/reminderDescription"
+        android:id="@+id/notes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -40,9 +42,9 @@
         app:strokeColor="#00296b"
         app:strokeWidth="3dp"
         android:layout_gravity="center"
-        android:textColor="#f4a261"
-        android:textColorHint="#f4a261"
-        android:hint="add the description of your reminder"/>
+        android:textColor="@color/darkPink"
+        android:textColorHint="@color/darkPink"
+        android:hint="add your notes in here"/>
 
     <Button
         android:id="@+id/add"
@@ -54,6 +56,6 @@
         app:strokeWidth="3dp"
         android:layout_gravity="center"
         android:text="Add"
-        android:textColor="#f4a261" />
+        android:textColor="@color/purple" />
 
 </LinearLayout>

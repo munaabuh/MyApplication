@@ -31,37 +31,38 @@
         android:id="@+id/editTextName"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
         android:hint="Name"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:drawableEnd="@drawable/person_icon"
-        android:background="@drawable/edit_text_bg"
         android:inputType="text"
+        android:backgroundTint="@color/purple"
         android:padding="8dp" />
     <EditText
 
         android:id="@+id/editTextSurname"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
         android:hint="Surname"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:drawableEnd="@drawable/pen_icon"
-        android:background="@drawable/edit_text_bg"
+        android:backgroundTint="@color/purple"
         android:inputType="text"
         android:padding="8dp" />
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
         android:hint="Email"
         android:textColor="@color/black"
         android:drawableEnd="@drawable/email_icon"
         android:textColorHint="@color/black"
-        android:background="@drawable/edit_text_bg"
+        android:backgroundTint="@color/purple"
+
         android:inputType="textEmailAddress"
         android:padding="8dp" />
     <EditText
@@ -69,25 +70,25 @@
         android:id="@+id/editTextBirthday"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
         android:hint="Birthday"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:drawableEnd="@drawable/calendar_icon"
-        android:background="@drawable/edit_text_bg"
         android:inputType="date"
+        android:backgroundTint="@color/purple"
         android:padding="8dp" />
     <EditText
 
         android:id="@+id/editTextPassword"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
         android:hint="Password"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:drawableEnd="@drawable/lock_icon"
-        android:background="@drawable/edit_text_bg"
+        android:backgroundTint="@color/purple"
         android:inputType="textPassword"
         android:padding="8dp" />
 

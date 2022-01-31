@@ -36,15 +36,24 @@
             android:id="@+id/imageViewProfile"
             />
 
-        <Button
-            android:id="@+id/reminderButton"
-            android:layout_width="250dp"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="120dp"
+            android:text="My Lists"
+            android:textSize="24dp"
+            android:textColor="@color/purple"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/reminderButton"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
             android:layout_marginBottom="50dp"
             android:background="@drawable/button_bg2"
             android:onClick="reminders"
-            android:text="Set a new reminder"
+            android:text="Reminders"
             android:textAllCaps="false"
             android:textColor="@color/purple"
             android:textSize="20dp"
@@ -52,12 +61,12 @@
 
         <Button
             android:id="@+id/appointmentButton"
-            android:layout_width="250dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="280dp"
             android:background="@drawable/button_bg2"
             android:onClick="reminders"
-            android:text="Set a new appointment"
+            android:text="Appointments"
             android:textAllCaps="false"
             android:textColor="@color/purple"
             android:textSize="20dp"
@@ -65,12 +74,12 @@
 
         <Button
             android:id="@+id/therapistsButton"
-            android:layout_width="250dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="380dp"
             android:background="@drawable/button_bg2"
             android:onClick="reminders"
-            android:text="Find your new therapist"
+            android:text="Therapists"
             android:textAllCaps="false"
             android:textColor="@color/purple"
             android:textSize="20dp"
