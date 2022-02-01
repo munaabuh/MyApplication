@@ -39,7 +39,7 @@ public class CustomAdapter extends ArrayAdapter<Reminder>{
 
         if(reminder != null) {
             TextView textViewDescription = view.findViewById(R.id.textViewDesc);
-            textViewDescription.setText(reminder.getTime() +" "+ reminder.getDate()+" " + reminder.getNotes());
+            textViewDescription.setText(reminder.getTime() + " " + reminder.getDate());
         }
         return view;
     }

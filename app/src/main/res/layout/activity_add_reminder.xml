@@ -34,13 +34,14 @@
         />
 
     <EditText
-        android:id="@+id/notes"
+        android:id="@+id/reminderBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:backgroundTint="@android:color/transparent"
         app:strokeColor="#00296b"
         app:strokeWidth="3dp"
+        android:inputType="text"
         android:layout_gravity="center"
         android:textColor="@color/darkPink"
         android:textColorHint="@color/darkPink"
@@ -56,6 +57,7 @@
         app:strokeWidth="3dp"
         android:layout_gravity="center"
         android:text="Add"
+        android:background="@drawable/button_bg2"
         android:textColor="@color/purple" />
 
 </LinearLayout>

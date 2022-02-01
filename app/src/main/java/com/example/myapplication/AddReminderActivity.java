@@ -28,9 +28,8 @@ public class AddReminderActivity extends AppCompatActivity {
     private Date date;
     private Time time;
     private Button add;
-    private String notes;
     DatabaseReference myRef;
-    private EditText date_time, note;
+    private EditText date_time, reminderBody ;
     private Reminder r = new Reminder();
     private FirebaseDatabase database = FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
 
@@ -43,7 +42,7 @@ public class AddReminderActivity extends AppCompatActivity {
         String user = FirebaseAuth.getInstance().getUid();
         myRef = database.getReference("users/" + user);
         add = findViewById(R.id.add);
-        note = findViewById(R.id.notes);
+        reminderBody = findViewById(R.id.reminderBody);
         date_time = findViewById(R.id.date_time);
         date_time.setInputType(InputType.TYPE_NULL);
         date_time.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +56,7 @@ public class AddReminderActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), ArrayListActivity.class);
-                r = new Reminder(date.toString(), time.toString(), notes.toString());
+                r = new Reminder(date.toString(), time.toString(), reminderBody.toString());
                 //Log.d("REMINDER: ",r.toString());
                 myRef.push().setValue(r);
                 startActivity(i);
