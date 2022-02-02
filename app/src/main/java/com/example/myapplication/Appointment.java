@@ -9,14 +9,14 @@ public class Appointment {
     private Date date;
     private Time time;
     private String summary;
-    private Therapist therapist;
+    private String therapist;
 
     //default constructor
     public Appointment() {
     }
 
     //constructor
-    public Appointment(Date date, Time time, String summary, Therapist therapist) {
+    public Appointment(Date date, Time time, String summary, String therapist) {
         this.date = date;
         this.time = time;
         this.summary = summary;
@@ -48,11 +48,11 @@ public class Appointment {
         this.summary = summary;
     }
 
-    public Therapist getTherapist() {
+    public String getTherapist() {
         return therapist;
     }
 
-    public void setTherapist(Therapist therapist) {
+    public void setTherapist(String therapist) {
         this.therapist = therapist;
     }
 }

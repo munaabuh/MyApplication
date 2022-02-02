@@ -64,20 +64,17 @@
         android:textStyle="bold"
         android:text="Log In" />
 
-        <Button
-            android:layout_margin="15dp"
-            android:padding="15dp"
-            android:text="Sign Up"
-            android:onClick="signUp"
-            android:id="@+id/buttonSignUp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_bg"/>
-
-
-
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/button_bg"
+        android:onClick="signUp"
+        android:padding="15dp"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
 
 </LinearLayout>
