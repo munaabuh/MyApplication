@@ -5,26 +5,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.List;
 
-public class CustomAdapter extends ArrayAdapter<Reminder>{
+public class AppointmentAdapter  extends ArrayAdapter<Appointment> {
 
     private int resource;
     private Context context;
 
-
-    public CustomAdapter(@NonNull Context context, int resource, @NonNull List<Reminder> objects) {
+    public AppointmentAdapter(@NonNull Context context, int resource, @NonNull List<Appointment> objects){
         super(context, resource, objects);
         this.context = context;
-        this.resource = resource; // this is the item row resource, the design for each row
+        this.resource = resource;
     }
 
     @NonNull
@@ -35,12 +31,13 @@ public class CustomAdapter extends ArrayAdapter<Reminder>{
             view = LayoutInflater.from(context).inflate(resource, parent, false);
 
         //method from the android studio, not related to Item object (the class we created).
-        Reminder reminder = getItem(position);
+        Appointment appointment = getItem(position);
 
-        if(reminder != null) {
+        if(appointment != null) {
             TextView textViewDescription = view.findViewById(R.id.textViewDesc);
-            textViewDescription.setText(reminder.getTime() + " " + reminder.getDate() + reminder.getNotes());
+            textViewDescription.setText(appointment.getTime() + " " + appointment.getDate() +" " +appointment.getSummary() +" " +appointment.getTherapist());
         }
         return view;
     }
+
 }

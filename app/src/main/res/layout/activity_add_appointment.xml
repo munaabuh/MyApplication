@@ -13,12 +13,25 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="Add a reminder"
+        android:text="Add an appointment"
         android:gravity="center"
         android:textStyle="bold"
         android:textColor="@color/purple"
         android:textSize="20dp"/>
 
+    <EditText
+        android:id="@+id/therapistName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@android:color/transparent"
+        app:strokeColor="#00296b"
+        app:strokeWidth="3dp"
+        android:layout_gravity="center"
+        android:hint="Psychiatrist"
+        android:textColorHint="@color/darkPink"
+        android:textColor="@color/darkPink"
+        />
 
     <EditText
         android:id="@+id/date_time"
@@ -37,7 +50,7 @@
 
 
     <EditText
-        android:id="@+id/reminderBody"
+        android:id="@+id/appointmentBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -48,7 +61,7 @@
         android:layout_gravity="center"
         android:textColor="@color/darkPink"
         android:textColorHint="@color/darkPink"
-        android:hint="Add your notes in here"/>
+        android:hint="Add your appointment summary"/>
 
     <Button
         android:id="@+id/add"

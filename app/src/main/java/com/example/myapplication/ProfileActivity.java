@@ -126,4 +126,10 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         Intent intent = new Intent(this, ArrayListActivity.class);
         startActivity(intent);
     }
+
+    public void appointments(View view){
+        Intent intent = new Intent(this, AppointmentListActivity.class);
+        startActivity(intent);
+    }
+
 }

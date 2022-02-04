@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cream"
+    tools:context=".ArrayListActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Appointments"
+        android:textStyle="bold"
+        android:textColor="@color/purple"
+        android:textSize="24dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        />
+    <ListView
+        android:id="@+id/myListView"
+        android:layout_marginTop="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants">
+    </ListView>
+
+    <ImageView
+        android:onClick="add"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/imageViewAdd"
+        android:layout_marginRight="7sp"
+        android:layout_gravity="right"
+        android:src="@drawable/add_icon">
+
+    </ImageView>
+
+</LinearLayout>

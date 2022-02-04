@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -22,14 +23,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class AddReminderActivity extends AppCompatActivity {
+public class AddAppointmentActivity extends AppCompatActivity {
 
     private Date date;
     private Time time;
     private Button add;
     DatabaseReference myRef;
-    private EditText date_time, reminderBody ;
-    private Reminder r = new Reminder();
+    private EditText date_time, therapistName, appointmentBody;
+    private Appointment a = new Appointment();
     private FirebaseDatabase database = FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
 
 
@@ -39,9 +40,10 @@ public class AddReminderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_reminder);
 
         String user = FirebaseAuth.getInstance().getUid();
-        myRef = database.getReference("users/" + user+"/Reminders");
+        myRef = database.getReference("users/" + user + "/Appointments");
         add = findViewById(R.id.add);
-        reminderBody = findViewById(R.id.reminderBody);
+        therapistName = findViewById(R.id.therapistName);
+        appointmentBody = findViewById(R.id.appointmentBody);
         date_time = findViewById(R.id.date_time);
         date_time.setInputType(InputType.TYPE_NULL);
         date_time.setOnClickListener(new View.OnClickListener() {
@@ -54,10 +56,10 @@ public class AddReminderActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), ArrayListActivity.class);
-                r = new Reminder(date.toString(), time.toString(), reminderBody.getText().toString());
+                Intent i = new Intent(getApplicationContext(), AppointmentListActivity.class);
+                a = new Appointment(date.toString(), time.toString(), therapistName.getText().toString(), appointmentBody.getText().toString());
                 //Log.d("REMINDER: ",r.toString());
-                myRef.push().setValue(r);
+                myRef.push().setValue(a);
                 startActivity(i);
             }
         });
@@ -87,12 +89,12 @@ public class AddReminderActivity extends AppCompatActivity {
                     }
                 };
 
-                new TimePickerDialog(AddReminderActivity.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), false).show();
+                new TimePickerDialog(AddAppointmentActivity.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), false).show();
             }
 
         };
 
-        new DatePickerDialog(AddReminderActivity.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
+        new DatePickerDialog(AddAppointmentActivity.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
 
     }
 }

@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="200dp"
             android:background="@drawable/button_bg2"
-            android:onClick="reminders"
+            android:onClick="appointments"
             android:text="Appointments"
             android:textAllCaps="false"
             android:textColor="@color/purple"

@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -20,14 +19,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ArrayListActivity extends AppCompatActivity{
+public class AppointmentListActivity extends AppCompatActivity {
 
     //the object of the view - design
     private ListView myListView;
     //object containing the items to be displayed - Data
-    private ArrayList<Reminder> list;
+    private ArrayList<Appointment> list;
     //the object for the adapter connecting the data to the view
-    private CustomAdapter myAdapter;
+    private AppointmentAdapter myAdapter;
     //get instance of authentication project in FB console
     private FirebaseAuth maFirebaseAuth = FirebaseAuth.getInstance();
     //gets the root of the real time database in the FB console
@@ -37,25 +36,20 @@ public class ArrayListActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_array_list);
+        setContentView(R.layout.activity_appointment_list);
 
         String UID = maFirebaseAuth.getUid();
-        Toast.makeText(this, "UID:"+UID, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "UID:" + UID, Toast.LENGTH_LONG).show();
         //build reference fo user related data in real time database suing user ID
-        DatabaseReference myRef = database.getReference("users/"+UID+"Reminders");
+        DatabaseReference myRef = database.getReference("users/" + UID + "Appointments");
 
-        //adds an item to the FB under the reference specified
-        //TODO change this into the object you need to use (reminder / appointment)
-        //TODO alter the code so the data is uploaded to the firebase only when the user clicks the button
-        //myRef.push().setValue(new Item(2,true,"this is my first item",R.id.imageItem));
-
-       list =  new ArrayList<>();
+        list = new ArrayList<>();
 
         //reference to the list view so it can be programmed
         myListView = findViewById(R.id.myListView);
 
         //connect adapter with data
-        myAdapter = new CustomAdapter(this, R.layout.item_row, list);
+        myAdapter = new AppointmentAdapter(this, R.layout.item_row, list);
 
         //connect adapter with view
         myListView.setAdapter(myAdapter);
@@ -64,8 +58,8 @@ public class ArrayListActivity extends AppCompatActivity{
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-              //myRef.push().setValue(new Item(2,true,"this is my first item",R.id.imageItem));
-              Toast.makeText(getApplicationContext(),"Item:" + list.get(i), Toast.LENGTH_LONG).show();
+                //myRef.push().setValue(new Item(2,true,"this is my first item",R.id.imageItem));
+                Toast.makeText(getApplicationContext(),"Item:" + list.get(i), Toast.LENGTH_LONG).show();
             }
         });
         myListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -82,8 +76,8 @@ public class ArrayListActivity extends AppCompatActivity{
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    Reminder reminder1 = dataSnapshot.getValue((Reminder.class));
-                    list.add(reminder1);
+                    Appointment appointment1 = dataSnapshot.getValue((Appointment.class));
+                    list.add(appointment1);
                     myAdapter.notifyDataSetChanged();
                 }
             }
@@ -93,14 +87,10 @@ public class ArrayListActivity extends AppCompatActivity{
 
             }
         });
-
     }
-
     public void add(View view){
-        Intent i = new Intent(this, AddReminderActivity.class);
+        Intent i = new Intent(this, AddAppointmentActivity.class);
         startActivity(i);
 
     }
-
-
 }

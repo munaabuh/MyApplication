@@ -6,8 +6,8 @@ import java.util.Date;
 public class Appointment {
 
     //attributes
-    private Date date;
-    private Time time;
+    private String date;
+    private String time;
     private String summary;
     private String therapist;
 
@@ -16,7 +16,7 @@ public class Appointment {
     }
 
     //constructor
-    public Appointment(Date date, Time time, String summary, String therapist) {
+    public Appointment(String date, String time, String summary, String therapist) {
         this.date = date;
         this.time = time;
         this.summary = summary;
@@ -24,19 +24,19 @@ public class Appointment {
     }
 
     //getters & setters
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public Time getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Time time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
