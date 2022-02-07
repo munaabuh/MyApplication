@@ -19,28 +19,27 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class MyTherapistsArrayListActivity extends AppCompatActivity {
+public class PsychiatristListActivity extends AppCompatActivity {
 
     //the object of the view - design
     private ListView myListView;
     //object containing the items to be displayed - Data
     private ArrayList<Therapist> list;
     //the object for the adapter connecting the data to the view
-    private MyTherapistsAdapter myAdapter;
+    private PsychiatristAdapter myAdapter;
     //get instance of authentication project in FB console
     private FirebaseAuth maFirebaseAuth = FirebaseAuth.getInstance();
     //gets the root of the real time database in the FB console
     private FirebaseDatabase database = FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_therapists_array_list);
+        setContentView(R.layout.activity_psychiatrist_list);
         String UID = maFirebaseAuth.getUid();
         Toast.makeText(this, "UID:" + UID, Toast.LENGTH_LONG).show();
         //build reference fo user related data in real time database suing user ID
-        DatabaseReference myRef = database.getReference("users/" + UID + "/MyTherapists");
+        DatabaseReference myRef = database.getReference("users/" + UID + "/Appointments");
 
         list = new ArrayList<>();
 
@@ -48,7 +47,7 @@ public class MyTherapistsArrayListActivity extends AppCompatActivity {
         myListView = findViewById(R.id.myListView);
 
         //connect adapter with data
-        myAdapter = new MyTherapistsAdapter(this, R.layout.item_row, list);
+        myAdapter = new PsychiatristAdapter(this, R.layout.item_row, list);
 
         //connect adapter with view
         myListView.setAdapter(myAdapter);
@@ -75,8 +74,8 @@ public class MyTherapistsArrayListActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    Therapist myTherapists = dataSnapshot.getValue((Therapist.class));
-                    list.add(myTherapists);
+                    Therapist therapist1 = dataSnapshot.getValue((Therapist.class));
+                    list.add(therapist1);
                     myAdapter.notifyDataSetChanged();
                 }
             }
@@ -87,9 +86,5 @@ public class MyTherapistsArrayListActivity extends AppCompatActivity {
             }
         });
     }
-    public void add(View view){
-        Intent i = new Intent(this, PsychiatristListActivity.class);
-        startActivity(i);
 
-    }
 }
