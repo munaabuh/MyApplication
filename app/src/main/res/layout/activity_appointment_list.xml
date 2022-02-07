@@ -8,6 +8,17 @@
     android:background="@color/cream"
     tools:context=".ArrayListActivity">
 
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:onClick="backwards"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/backwards"
+        android:layout_marginRight="7sp"
+        android:layout_gravity="left"
+        android:src="@drawable/arrow_icon">
+    </ImageView>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
