@@ -37,7 +37,7 @@ public class AddAppointmentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_reminder);
+        setContentView(R.layout.activity_add_appointment);
 
         String user = FirebaseAuth.getInstance().getUid();
         myRef = database.getReference("users/" + user + "/Appointments");

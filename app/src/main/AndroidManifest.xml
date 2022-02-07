@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication" >
+    package="com.example.myapplication">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
@@ -10,7 +10,16 @@
         android:label="Sanctum"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" >
+        android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
+        <activity
+            android:name=".AddMyTherapistActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MyTherapistsAdapter"
+            android:exported="true" />
+        <activity
+            android:name=".MyTherapistsArrayListActivity"
+            android:exported="true" />
         <activity
             android:name=".AddAppointmentActivity"
             android:exported="true" />
@@ -27,19 +36,6 @@
         <service
             android:name=".NotificationIntentService"
             android:exported="false" />
-
-        <activity
-            android:name=".DepressionActivity"
-            android:exported="true" />
-        <activity
-            android:name=".StressActivity"
-            android:exported="true" />
-        <activity
-            android:name=".OverthinkingActivity"
-            android:exported="true" />
-        <activity
-            android:name=".AnxietyActivity"
-            android:exported="true" />
 
         <service
             android:name=".MusicService"
@@ -69,7 +65,7 @@
             android:enabled="true" />
         <activity
             android:name=".WelcomeActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

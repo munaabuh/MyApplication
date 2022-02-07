@@ -41,7 +41,7 @@ public class AppointmentListActivity extends AppCompatActivity {
         String UID = maFirebaseAuth.getUid();
         Toast.makeText(this, "UID:" + UID, Toast.LENGTH_LONG).show();
         //build reference fo user related data in real time database suing user ID
-        DatabaseReference myRef = database.getReference("users/" + UID + "Appointments");
+        DatabaseReference myRef = database.getReference("users/" + UID + "/Appointments");
 
         list = new ArrayList<>();
 

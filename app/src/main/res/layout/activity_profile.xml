@@ -87,7 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="360dp"
             android:background="@drawable/button_bg2"
-            android:onClick="reminders"
+            android:onClick="myTherapists"
             android:text="Therapists"
             android:textAllCaps="false"
             android:textColor="@color/purple"

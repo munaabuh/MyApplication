@@ -132,4 +132,9 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         startActivity(intent);
     }
 
+    public void myTherapists(View view){
+        Intent intent = new Intent(this, MyTherapistsArrayListActivity.class);
+        startActivity(intent);
+    }
+
 }

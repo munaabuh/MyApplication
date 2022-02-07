@@ -11,14 +11,14 @@ public class Therapist {
     private String area;
     private String major;
     private String gender;
-    private HourRange workingHours;
-    private DayOfWeek workingDays;
+    private String workingHours;
+    private String workingDays;
 
     //default constructor
     public Therapist() {}
 
     //constructor
-    public Therapist(int phone, String name, String area, String major, String gender, HourRange workingHours, DayOfWeek workingDays) {
+    public Therapist(int phone, String name, String area, String major, String gender, String workingHours, String workingDays) {
         this.phone = phone;
         this.name = name;
         this.area = area;
@@ -69,19 +69,19 @@ public class Therapist {
         this.gender = gender;
     }
 
-    public HourRange getWorkingHours() {
+    public String getWorkingHours() {
         return workingHours;
     }
 
-    public void setWorkingHours(HourRange workingHours) {
+    public void setWorkingHours(String workingHours) {
         this.workingHours = workingHours;
     }
 
-    public DayOfWeek getWorkingDays() {
+    public String getWorkingDays() {
         return workingDays;
     }
 
-    public void setWorkingDays(DayOfWeek workingDays) {
+    public void setWorkingDays(String workingDays) {
         this.workingDays = workingDays;
     }
 }

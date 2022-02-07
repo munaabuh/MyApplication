@@ -39,7 +39,7 @@ public class AddReminderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_reminder);
 
         String user = FirebaseAuth.getInstance().getUid();
-        myRef = database.getReference("users/" + user+"/Reminders");
+        myRef = database.getReference("users/" + user+ "/Reminders");
         add = findViewById(R.id.add);
         reminderBody = findViewById(R.id.reminderBody);
         date_time = findViewById(R.id.date_time);
