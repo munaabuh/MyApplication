@@ -35,6 +35,7 @@ public class PsychiatristAdapter extends ArrayAdapter<Therapist> {
         if(Psychiatrist != null) {
             TextView textViewDescription = view.findViewById(R.id.textViewDesc);
             textViewDescription.setText(Psychiatrist.toString());
+
         }
         return view;
     }

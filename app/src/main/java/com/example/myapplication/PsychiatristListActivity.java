@@ -39,10 +39,10 @@ public class PsychiatristListActivity extends AppCompatActivity {
         String UID = maFirebaseAuth.getUid();
         Toast.makeText(this, "UID:" + UID, Toast.LENGTH_LONG).show();
         //build reference fo user related data in real time database suing user ID
-        DatabaseReference myRef = database.getReference("users/" + UID + "/Appointments");
+        DatabaseReference myRef = database.getReference("therapists/" + UID + "/therapists");
 
         list = new ArrayList<>();
-        list.add(new Therapist("0723971429", "Ekisabeth Wajnryt","Jerusalem","Eating Disorders Specialist","female" ));
+        list.add(new Therapist("0723971429", "Elisabeth Wajnryt","Jerusalem","Eating Disorders Specialist","female" ));
         list.add(new Therapist("0723971357", "Orli Jacobs", "Ra'nana", "Mental Health Counselor", "female"));
         list.add(new Therapist("0723971263", "Wendy Gordon", "Tel Aviv", "Clinical Social Worker","female"));
         list.add(new Therapist("0723971414", "Liat Gamzo", "Tel Aviv", "Clinical Psychologist", "female"));
@@ -53,7 +53,7 @@ public class PsychiatristListActivity extends AppCompatActivity {
         myListView = findViewById(R.id.myListView);
 
         //connect adapter with data
-        myAdapter = new PsychiatristAdapter(this, R.layout.item_row, list);
+        myAdapter = new PsychiatristAdapter(this, R.layout.therapists_row, list);
 
         //connect adapter with view
         myListView.setAdapter(myAdapter);

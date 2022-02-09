@@ -65,14 +65,15 @@ public class Therapist {
         this.gender = gender;
     }
 
+
     @Override
     public String toString() {
         return
 
-                this.name + '\'' +
-                this.area + '\'' +
-                this.major + '\'' +
-                this.gender + '\'' +
+                this.name + '\n' +
+                this.area + '\n' +
+                this.major + '\n'+
+                this.gender + '\n'+
                 this.phone;
     }
 }
