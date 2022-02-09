@@ -42,6 +42,12 @@ public class PsychiatristListActivity extends AppCompatActivity {
         DatabaseReference myRef = database.getReference("users/" + UID + "/Appointments");
 
         list = new ArrayList<>();
+        list.add(new Therapist("0723971429", "Ekisabeth Wajnryt","Jerusalem","Eating Disorders Specialist","female" ));
+        list.add(new Therapist("0723971357", "Orli Jacobs", "Ra'nana", "Mental Health Counselor", "female"));
+        list.add(new Therapist("0723971263", "Wendy Gordon", "Tel Aviv", "Clinical Social Worker","female"));
+        list.add(new Therapist("0723971414", "Liat Gamzo", "Tel Aviv", "Clinical Psychologist", "female"));
+        list.add(new Therapist("0723971387", "Natasha Miller Gutman", "Tel Aviv , Hirzelya", "Expressive Arts Therapist", "female"));
+        list.add(new Therapist("0723971435", "Jennifer Turgeman", "Herzliya, Pituach, Tel Aviv", "Creative Arts Therapist", "female"));
 
         //reference to the list view so it can be programmed
         myListView = findViewById(R.id.myListView);

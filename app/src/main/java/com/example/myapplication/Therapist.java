@@ -6,34 +6,30 @@ import java.time.DayOfWeek;
 public class Therapist {
 
     //attributes
-    private int phone;
+    private String phone;
     private String name;
     private String area;
     private String major;
     private String gender;
-    private String workingHours;
-    private String workingDays;
 
     //default constructor
     public Therapist() {}
 
     //constructor
-    public Therapist(int phone, String name, String area, String major, String gender, String workingHours, String workingDays) {
+    public Therapist(String  phone, String name, String area, String major, String gender) {
         this.phone = phone;
         this.name = name;
         this.area = area;
         this.major = major;
         this.gender = gender;
-        this.workingHours = workingHours;
-        this.workingDays = workingDays;
     }
 
     //getters & setters
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -69,19 +65,14 @@ public class Therapist {
         this.gender = gender;
     }
 
-    public String getWorkingHours() {
-        return workingHours;
-    }
+    @Override
+    public String toString() {
+        return
 
-    public void setWorkingHours(String workingHours) {
-        this.workingHours = workingHours;
-    }
-
-    public String getWorkingDays() {
-        return workingDays;
-    }
-
-    public void setWorkingDays(String workingDays) {
-        this.workingDays = workingDays;
+                this.name + '\'' +
+                this.area + '\'' +
+                this.major + '\'' +
+                this.gender + '\'' +
+                this.phone;
     }
 }
