@@ -27,20 +27,18 @@ public class MyTherapistsArrayListActivity extends AppCompatActivity {
     private ArrayList<Therapist> list;
     //the object for the adapter connecting the data to the view
     private MyTherapistsAdapter myAdapter;
-    //get instance of authentication project in FB console
     private FirebaseAuth maFirebaseAuth = FirebaseAuth.getInstance();
-    //gets the root of the real time database in the FB console
+    private String UID = maFirebaseAuth.getUid();
     private FirebaseDatabase database = FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
+    private  DatabaseReference myRef = database.getReference("users/" +UID +"/favorites");
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_therapists_array_list);
-        String UID = maFirebaseAuth.getUid();
         Toast.makeText(this, "UID:" + UID, Toast.LENGTH_LONG).show();
-        //build reference fo user related data in real time database suing user ID
-        DatabaseReference myRef = database.getReference("users/" + UID + "/MyTherapists");
+
 
         list = new ArrayList<>();
 
@@ -52,6 +50,19 @@ public class MyTherapistsArrayListActivity extends AppCompatActivity {
 
         //connect adapter with view
         myListView.setAdapter(myAdapter);
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Therapist therapist = snapshot.getValue(Therapist.class);
+                list.add(therapist);
+                myAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         //connects click listener to items in the list
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
