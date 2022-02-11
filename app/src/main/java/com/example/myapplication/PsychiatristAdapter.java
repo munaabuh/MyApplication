@@ -54,6 +54,7 @@ public class PsychiatristAdapter extends ArrayAdapter<Therapist>{
                 @Override
                 public void onClick(View view) {
                     myRef.push().setValue(Psychiatrist);
+                    favorite.setImageResource(R.drawable.filled_person_icon);
                 }
             });
 
