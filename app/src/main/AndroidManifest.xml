@@ -11,18 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" >
-        <activity
-            android:name=".PsychiatristAdapter"
-            android:exported="true" />
+
         <activity
             android:name=".PsychiatristListActivity"
             android:exported="true" />
-        <activity
-            android:name=".AddMyTherapistActivity"
-            android:exported="true" />
-        <activity
-            android:name=".MyTherapistsAdapter"
-            android:exported="true" />
+
         <activity
             android:name=".MyTherapistsArrayListActivity"
             android:exported="true" />
