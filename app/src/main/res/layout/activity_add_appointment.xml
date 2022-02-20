@@ -19,14 +19,20 @@
         android:textColor="@color/purple"
         android:textSize="20dp"/>
 
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:layout_margin="80dp"
+        android:hint="Therapist name">
 
-<EditText
-    android:id="@+id/therapistName"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:hint="Insert the name of your therapist"
-    android:textColor="@color/darkPink"
-    android:textStyle="bold"/>
+        <AutoCompleteTextView
+            android:id="@+id/therapistName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
         android:id="@+id/date_time"

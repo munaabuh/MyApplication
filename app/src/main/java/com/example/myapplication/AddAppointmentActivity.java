@@ -9,6 +9,8 @@ import android.content.pm.ApplicationInfo;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -29,7 +31,7 @@ public class AddAppointmentActivity extends AppCompatActivity {
     private Time time;
     private Button add;
     DatabaseReference myRef;
-    private EditText date_time, therapistName,appointmentBody;
+    private EditText date_time,appointmentBody;
     private Appointment a = new Appointment();
     private FirebaseDatabase database = FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
 
@@ -39,13 +41,17 @@ public class AddAppointmentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_appointment);
 
+        String [] therapists = new String[]{"Elisabeth Wajnryt", "Orli Jacobs", "Wendy Gordon", "Liat Gamzo", "Natasha Miller Gutman", "Jennifer Trugeman"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.drop_down_item, therapists);
+        AutoCompleteTextView autoCompleteTextView = findViewById(R.id.therapistName);
+        autoCompleteTextView.setAdapter(adapter);
 
 
         String user = FirebaseAuth.getInstance().getUid();
         myRef = database.getReference("users/" + user + "/Appointments");
         add = findViewById(R.id.add);
 
-        therapistName = findViewById(R.id.therapistName);
+
         appointmentBody = findViewById(R.id.appointmentBody);
         date_time = findViewById(R.id.date_time);
         date_time.setInputType(InputType.TYPE_NULL);
@@ -60,7 +66,7 @@ public class AddAppointmentActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), AppointmentListActivity.class);
-                a = new Appointment(date.toString(), time.toString(), therapistName.getText().toString(), appointmentBody.getText().toString());
+                //a = new Appointment(date.toString(), time.toString(), therapistName.getText().toString(), appointmentBody.getText().toString());
                 //Log.d("REMINDER: ",r.toString());
                 myRef.push().setValue(a);
                 startActivity(i);
