@@ -29,7 +29,7 @@ public class AddAppointmentActivity extends AppCompatActivity {
     private Time time;
     private Button add;
     DatabaseReference myRef;
-    private EditText date_time, therapistName, appointmentBody;
+    private EditText date_time, therapistName,appointmentBody;
     private Appointment a = new Appointment();
     private FirebaseDatabase database = FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
 
@@ -39,9 +39,12 @@ public class AddAppointmentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_appointment);
 
+
+
         String user = FirebaseAuth.getInstance().getUid();
         myRef = database.getReference("users/" + user + "/Appointments");
         add = findViewById(R.id.add);
+
         therapistName = findViewById(R.id.therapistName);
         appointmentBody = findViewById(R.id.appointmentBody);
         date_time = findViewById(R.id.date_time);
