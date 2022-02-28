@@ -43,8 +43,8 @@ public class AddAppointmentActivity extends AppCompatActivity {
 
         String [] therapists = new String[]{"Elisabeth Wajnryt", "Orli Jacobs", "Wendy Gordon", "Liat Gamzo", "Natasha Miller Gutman", "Jennifer Trugeman"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.drop_down_item, therapists);
-        AutoCompleteTextView autoCompleteTextView = findViewById(R.id.therapistName);
-        autoCompleteTextView.setAdapter(adapter);
+      //  AutoCompleteTextView autoCompleteTextView = findViewById(R.id.therapistName);
+    //    autoCompleteTextView.setAdapter(adapter);
 
 
         String user = FirebaseAuth.getInstance().getUid();

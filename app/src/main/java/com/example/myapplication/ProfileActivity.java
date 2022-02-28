@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,6 +36,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     //attributes
     private ImageView imageViewProfile;
     private Button buttonCamera, reminderButton, therapistButton, appointmentButton;
+    private TextView userTV;
 
     //for picture of camera
     private Bitmap picture;
@@ -59,7 +61,12 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
         imageViewProfile = findViewById(R.id.imageViewProfile);
 
+        userTV = findViewById(R.id.userTV);
 
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        String email = mAuth.getCurrentUser().getEmail();
+
+        userTV.setText(email);
     }
 
     @Override
