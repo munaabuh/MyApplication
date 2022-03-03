@@ -51,17 +51,17 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_profile);
 
         //gets reference for the design components
-        buttonCamera = findViewById(R.id.buttonCamera);
+       // buttonCamera = findViewById(R.id.buttonCamera);
         buttonCamera.setOnClickListener(this);
         buttonCamera.setOnLongClickListener(this);
 
-        reminderButton = findViewById(R.id.reminderButton);
-        therapistButton = findViewById(R.id.therapistsButton);
-        appointmentButton = findViewById(R.id.appointmentButton);
+        //reminderButton = findViewById(R.id.reminderButton);
+        //therapistButton = findViewById(R.id.therapistsButton);
+        //appointmentButton = findViewById(R.id.appointmentButton);
 
-        imageViewProfile = findViewById(R.id.imageViewProfile);
+       // imageViewProfile = findViewById(R.id.imageViewProfile);
 
-        userTV = findViewById(R.id.userTV);
+        //userTV = findViewById(R.id.userTV);
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         String email = mAuth.getCurrentUser().getEmail();

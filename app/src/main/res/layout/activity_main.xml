@@ -24,7 +24,7 @@
             android:text="Welcome to your Sanctum"
             android:textColor="@color/purple"
             android:textSize="26dp"
-            android:textStyle="italic" />
+            android:textStyle="bold" />
 
         <Button
             android:onClick="profile"
@@ -38,29 +38,34 @@
             android:id="@+id/relativeLayout_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:background="@drawable/search_bg">
+            android:layout_marginTop="120dp">
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="50dp"
-                android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/search_icon" />
-
-            <EditText
-                android:layout_width="260dp"
+            <TextView
+                android:id="@+id/therapists"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="55dp"
-                android:hint="Search"
-                android:inputType="text"
-                android:shadowColor="@color/purple"
-                android:backgroundTint="@color/purple"
-                android:textColorHint="@color/purple"
+                android:background="@drawable/search_bg"
+                android:gravity="center"
+                android:text="Our Therapists"
                 android:textColor="@color/purple"
-                android:textSize="18dp" />
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:onClick="therapists"/>
+
+            <TextView
+                android:id="@+id/aboutUs"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="About Us"
+                android:gravity="center"
+                android:onClick="aboutUS"
+                android:textSize="24dp"
+                android:layout_marginStart="220dp"
+                android:textColor="@color/purple"
+                android:background="@drawable/search_bg"/>
+
+
 
         </RelativeLayout>
 
@@ -190,7 +195,7 @@
                android:layout_marginLeft="18dp"
                android:layout_marginTop="20dp"
                android:layout_marginRight="20dp"
-               android:background="@drawable/list_d1"/>
+               android:background="@drawable/list_d1" />
 
 
            <TextView
@@ -217,41 +222,51 @@
                <androidx.cardview.widget.CardView
                    app:cardCornerRadius="20dp"
                    android:layout_width="150dp"
-                   android:layout_height="200dp"
+                   android:layout_height="wrap_content"
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
                    android:id="@+id/anxietyTypes"
                    app:cardBackgroundColor="@color/cream">
 
+                   <ImageView
+                       android:layout_width="150dp"
+                       android:layout_height="200dp"
+                       android:src="@drawable/anxiety"/>
+
                    <TextView
                        android:textSize="24dp"
                        android:textStyle="bold"
                        android:gravity="center"
                        android:layout_width="150dp"
-                       android:layout_marginTop="40dp"
+                       android:layout_marginTop="180dp"
                        android:textColor="@color/purple"
                        android:layout_height="wrap_content"
-                       android:text="What are the different types of anxiety?"/>
+                       android:text="Anxiety Types"/>
 
                </androidx.cardview.widget.CardView>
 
                <androidx.cardview.widget.CardView
                    android:id="@+id/anxietyCauses"
                    android:layout_width="150dp"
-                   android:layout_height="200dp"
+                   android:layout_height="wrap_content"
                    android:layout_marginLeft="10dp"
                    android:layout_marginTop="20dp"
                    android:textAlignment="center"
                    app:cardBackgroundColor="@color/cream"
                    app:cardCornerRadius="20dp">
 
+                   <ImageView
+                       android:layout_width="150dp"
+                       android:layout_height="200dp"
+                       android:src="@drawable/anxiety"/>
+
                    <TextView
                        android:layout_width="150dp"
                        android:layout_height="wrap_content"
-                       android:layout_marginTop="60dp"
+                       android:layout_marginTop="180dp"
                        android:gravity="center"
-                       android:text="Symptoms and Causes of anxiety?"
+                       android:text="Symptoms and Causes"
                        android:textColor="@color/purple"
                        android:textSize="24dp"
                        android:textStyle="bold" />
@@ -261,22 +276,27 @@
                <androidx.cardview.widget.CardView
                    app:cardCornerRadius="20dp"
                    android:layout_width="150dp"
-                   android:layout_height="200dp"
+                   android:layout_height="240dp"
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
                    android:id="@+id/anxietyTreatment"
                    app:cardBackgroundColor="@color/cream">
 
+                   <ImageView
+                       android:layout_width="150dp"
+                       android:layout_height="200dp"
+                       android:src="@drawable/anxiety"/>
+
                    <TextView
                        android:textSize="24dp"
                        android:textStyle="bold"
                        android:gravity="center"
                        android:layout_width="150dp"
-                       android:layout_marginTop="70dp"
+                       android:layout_marginTop="200dp"
                        android:textColor="@color/purple"
                        android:layout_height="wrap_content"
-                       android:text="How to treat anxiety?"/>
+                       android:text="Treatment"/>
 
                </androidx.cardview.widget.CardView>
 
@@ -425,21 +445,26 @@
                <androidx.cardview.widget.CardView
                    android:layout_width="150dp"
                    app:cardCornerRadius="20dp"
-                   android:layout_height="200dp"
+                   android:layout_height="wrap_content"
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
                    android:id="@+id/stressTypes"
                    app:cardBackgroundColor="@color/cream">
 
+                   <ImageView
+                       android:layout_width="150dp"
+                       android:layout_height="200dp"
+                       android:src="@drawable/stress"/>
+
                    <TextView
                        android:textSize="24dp"
                        android:textStyle="bold"
                        android:gravity="center"
                        android:layout_width="150dp"
-                       android:layout_marginTop="40dp"
+                       android:layout_marginTop="230dp"
                        android:textColor="@color/purple"
-                       android:text=" What are the different types of stress?"
+                       android:text="Types of Stress"
                        android:layout_height="wrap_content"/>
 
                </androidx.cardview.widget.CardView>
@@ -447,42 +472,51 @@
                <androidx.cardview.widget.CardView
                    android:layout_width="150dp"
                    app:cardCornerRadius="20dp"
-                   android:layout_height="200dp"
+                   android:layout_height="wrap_content"
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
                    android:id="@+id/stressCauses"
                    app:cardBackgroundColor="@color/cream">
 
+                   <ImageView
+                       android:layout_width="150dp"
+                       android:layout_height="200dp"
+                       android:src="@drawable/stress"/>
 
                    <TextView
                        android:textSize="24dp"
                        android:textStyle="bold"
                        android:gravity="center"
                        android:layout_width="150dp"
-                       android:layout_marginTop="30dp"
+                       android:layout_marginTop="200dp"
                        android:textColor="@color/purple"
                        android:layout_height="wrap_content"
-                       android:text="Causes, Symptoms and complications of stress"/>
+                       android:text="Causes and Symptoms of stress"/>
 
                </androidx.cardview.widget.CardView>
 
                <androidx.cardview.widget.CardView
                    android:layout_width="150dp"
                    app:cardCornerRadius="20dp"
-                   android:layout_height="200dp"
+                   android:layout_height="wrap_content"
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
                    android:id="@+id/stressTreatment"
                    app:cardBackgroundColor="@color/cream">
 
+                   <ImageView
+                       android:layout_width="150dp"
+                       android:layout_height="200dp"
+                       android:src="@drawable/stress"/>
+
                    <TextView
                        android:textSize="24dp"
                        android:textStyle="bold"
                        android:gravity="center"
                        android:layout_width="150dp"
-                       android:layout_marginTop="60dp"
+                       android:layout_marginTop="200dp"
                        android:textColor="@color/purple"
                        android:layout_height="wrap_content"
                        android:text="Diagnosis and treatment"/>
@@ -530,64 +564,78 @@
                <androidx.cardview.widget.CardView
                    app:cardCornerRadius="20dp"
                    android:layout_width="150dp"
-                   android:layout_height="200dp"
+                   android:layout_height="wrap_content"
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
                    android:id="@+id/depressionTypes"
                    app:cardBackgroundColor="@color/cream">
 
+                   <ImageView
+                       android:layout_width="150dp"
+                       android:layout_height="200dp"
+                       android:src="@drawable/depression"/>
+
                    <TextView
                        android:textSize="24dp"
                        android:textStyle="bold"
                        android:gravity="center"
                        android:layout_width="150dp"
-                       android:layout_marginTop="40dp"
+                       android:layout_marginTop="230dp"
                        android:textColor="@color/purple"
                        android:layout_height="wrap_content"
-                       android:text="What are the different types of depression?"/>
+                       android:text="Types of Depression"/>
 
                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                    app:cardCornerRadius="20dp"
                    android:layout_width="150dp"
-                   android:layout_height="200dp"
+                   android:layout_height="wrap_content"
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
                     android:id="@+id/depressionCauses"
                    app:cardBackgroundColor="@color/cream">
 
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="200dp"
+                        android:src="@drawable/depression"/>
+
                    <TextView
                        android:textSize="24dp"
                        android:textStyle="bold"
                        android:gravity="center"
                        android:layout_width="150dp"
-                       android:layout_marginTop="40dp"
+                       android:layout_marginTop="200dp"
                        android:textColor="@color/purple"
                        android:layout_height="wrap_content"
-                       android:text="Signs, symptoms and causes of depression"/>
+                       android:text="Symptoms and causes of depression"/>
 
                 </androidx.cardview.widget.CardView>
 
                <androidx.cardview.widget.CardView
                    app:cardCornerRadius="20dp"
                    android:layout_width="150dp"
-                   android:layout_height="200dp"
+                   android:layout_height="wrap_content"
                    android:textAlignment="center"
                    android:layout_marginTop="20dp"
                    android:layout_marginLeft="10dp"
                    android:id="@+id/depressionTreatment"
                    app:cardBackgroundColor="@color/cream">
 
+                   <ImageView
+                       android:layout_width="150dp"
+                       android:layout_height="200dp"
+                       android:src="@drawable/depression"/>
 
                    <TextView
                        android:textSize="24dp"
                        android:textStyle="bold"
                        android:gravity="center"
                        android:layout_width="150dp"
-                       android:layout_marginTop="60dp"
+                       android:layout_marginTop="200dp"
                        android:textColor="@color/purple"
                        android:layout_height="wrap_content"
                        android:text="Diagnosis and treatment"/>

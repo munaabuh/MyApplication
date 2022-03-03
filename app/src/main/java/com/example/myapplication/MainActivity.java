@@ -18,11 +18,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements DialogInterface.OnClickListener{
 
     private static final int NOTIFICATION_REMINDER_NIGHT = 1;
+    private TextView therapists, aboutUs;
     private Intent musicIntent;
     private Button profileButton;
     private CardView mentalHealthCard, mindfulnessCard, therapyCard,anxietyTypes, anxietyCauses, anxietyTreatment, emotionalEatingSigns,
@@ -34,6 +36,10 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        aboutUs = findViewById(R.id.aboutUs);
+        therapists = findViewById(R.id.therapists);
+
 
         profileButton= findViewById(R.id.profileButton);
 
@@ -290,6 +296,16 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
 
+    }
+
+    public void therapists(View view){
+        Intent intent = new Intent(this, PsychiatristListActivity.class);
+        startActivity(intent);
+    }
+
+    public void aboutUS(View view){
+        Intent intent = new Intent(this, AboutUsActivity.class);
+        startActivity(intent);
     }
 
 }
