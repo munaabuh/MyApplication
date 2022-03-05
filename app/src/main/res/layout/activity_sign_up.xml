@@ -193,15 +193,15 @@
 
     <Button
         android:id="@+id/buttonSubmit"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="35dp"
         android:layout_marginStart="150dp"
-        android:background="@drawable/button_bg"
+        android:background="@drawable/button_bg2"
         android:onClick="submit"
         android:padding="8dp"
         android:text="Register"
-        android:layout_marginEnd="10dp"
-        android:textColor="@color/white"
+        android:layout_marginEnd="18dp"
+        android:textColor="@color/darkPink"
         android:textStyle="bold" />
 
 

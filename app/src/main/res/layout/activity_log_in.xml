@@ -60,6 +60,7 @@
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="287dp"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         android:textColor="@color/darkPink"
         android:drawableEnd="@drawable/email_icon"
@@ -80,7 +81,7 @@
 
     <EditText
         android:id="@+id/editTextPassword"
-        android:layout_width="292dp"
+        android:layout_width="287dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:drawableEnd="@drawable/lock_icon"
@@ -89,23 +90,48 @@
         android:backgroundTint="@color/purple"
         android:padding="10dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:layout_gravity="left"
+        android:textColor="@color/darkPink"
+        android:textSize="20dp"
+        android:text="All set?"/>
+
     <Button
         android:id="@+id/buttonLogIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="70dp"
+        android:layout_gravity="left"
         android:background="@drawable/button_bg2"
         android:onClick="logIn"
         android:padding="15dp"
+        android:text="Log In"
         android:textColor="@color/darkPink"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="20dp"
         android:textStyle="bold"
-        android:text="Log In" />
+        android:layout_gravity="left"
+        android:textColor="@color/darkPink"
+        android:textSize="20dp"
+        android:text="Don't have an account?"/>
 
     <Button
         android:id="@+id/buttonSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
         android:background="@drawable/button_bg2"
         android:onClick="signUp"
         android:padding="15dp"
