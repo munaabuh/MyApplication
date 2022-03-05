@@ -8,27 +8,40 @@
     android:background="@color/cream"
     tools:context=".ArrayListActivity">
 
-    <ImageView
-        android:layout_marginTop="10dp"
-        android:onClick="backwards"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:id="@+id/backwards"
-        android:layout_marginRight="7sp"
-        android:layout_gravity="left"
-        android:src="@drawable/arrow_icon">
-    </ImageView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="My Reminders"
-        android:textStyle="bold"
-        android:textColor="@color/purple"
-        android:textSize="24dp"
-        android:layout_marginLeft="10dp"
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_marginTop="20dp"
-        />
+        android:layout_height="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:id="@+id/linear_ll"
+            android:gravity="left"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_alignParentLeft="true"/>
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Reminders"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:textColor="@color/purple"
+                android:layout_marginStart="70dp"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
     <ListView
         android:id="@+id/myListView"
         android:layout_marginTop="7dp"

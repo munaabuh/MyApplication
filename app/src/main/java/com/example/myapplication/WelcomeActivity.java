@@ -17,7 +17,7 @@ import android.widget.Toast;
 public class WelcomeActivity extends AppCompatActivity implements DialogInterface.OnClickListener{
 
     private Button buttonLogIn, buttonSignUp;
-    private TextView welcomeNote, logInNote, signUpNote;
+    private TextView welcomeNote, logInNote, signUpNote, introNote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -29,13 +29,14 @@ public class WelcomeActivity extends AppCompatActivity implements DialogInterfac
         buttonSignUp = findViewById(R.id.buttonSignUp);
 
         welcomeNote = findViewById(R.id.welcomeNote);
+        introNote= findViewById(R.id.introNote);
         logInNote = findViewById(R.id.logInNote);
         signUpNote = findViewById(R.id.signUpNote);
 
 
 
         String name = getIntent().getStringExtra("name");
-        welcomeNote.setText("Hello Today ;)!");
+        welcomeNote.setText("Hi there ;)!");
 
     }
     public void logIn(View view){

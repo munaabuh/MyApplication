@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
+    android:gravity="left"
     android:background="@color/cream"
     tools:context=".AddReminderActivity">
 
@@ -16,51 +16,71 @@
         android:text="Add a reminder"
         android:gravity="center"
         android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="20dp"
         android:textColor="@color/purple"
         android:textSize="20dp"/>
 
 
-    <EditText
-        android:id="@+id/date_time"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="@android:color/transparent"
-        app:strokeColor="#00296b"
-        app:strokeWidth="3dp"
-        android:layout_gravity="center"
-        android:hint="Date and time"
-        android:textColorHint="@color/darkPink"
+        android:text="Reminder"
         android:textColor="@color/darkPink"
-        />
-
-
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="60dp"/>
 
     <EditText
         android:id="@+id/reminderBody"
-        android:layout_width="wrap_content"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:backgroundTint="@android:color/transparent"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="@color/darkPink"
         app:strokeColor="#00296b"
         app:strokeWidth="3dp"
-        android:inputType="text"
         android:layout_gravity="center"
+        android:textColor="@color/darkPink"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date and time"
         android:textColor="@color/darkPink"
-        android:textColorHint="@color/darkPink"
-        android:hint="Add your notes in here"/>
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="80dp"/>
+
+    <EditText
+        android:id="@+id/date_time"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="@color/darkPink"
+        app:strokeColor="#00296b"
+        app:strokeWidth="3dp"
+        android:layout_gravity="center"
+        android:textColor="@color/darkPink"/>
+
 
     <Button
         android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="@android:color/transparent"
+        android:layout_marginTop="80dp"
+        android:background="@color/pink"
         app:strokeColor="#00296b"
         app:strokeWidth="3dp"
-        android:layout_gravity="center"
+        android:layout_gravity="right"
+        android:layout_marginEnd="20dp"
         android:text="Add"
-        android:background="@drawable/button_bg2"
+      android:textStyle="bold"
         android:textColor="@color/purple" />
 
 </LinearLayout>

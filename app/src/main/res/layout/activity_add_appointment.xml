@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
+    android:gravity="left"
     android:background="@color/cream"
     tools:context=".AddReminderActivity">
 
@@ -14,54 +14,96 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:text="Add an appointment"
-        android:gravity="center"
         android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="20dp"
         android:textColor="@color/purple"
+        android:layout_marginEnd="20dp"
         android:textSize="20dp"/>
 
 
 
-    <EditText
-        android:id="@+id/date_time"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="@android:color/transparent"
-        app:strokeColor="#00296b"
-        app:strokeWidth="3dp"
-        android:layout_gravity="center"
-        android:hint="Date and time"
-        android:textColorHint="@color/darkPink"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="75dp"
+        android:textStyle="bold"
         android:textColor="@color/darkPink"
-        />
-
-
+        android:textSize="16dp"
+        android:text="Therapist"/>
 
     <EditText
-        android:id="@+id/appointmentBody"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="@android:color/transparent"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="75dp"
+        android:backgroundTint="@color/darkPink"
         app:strokeColor="#00296b"
         app:strokeWidth="3dp"
         android:inputType="text"
-        android:layout_gravity="center"
+        android:id="@+id/therapistName"
+        android:textStyle="bold"
+        android:textColor="@color/darkPink"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="75dp"
+        android:textStyle="bold"
         android:textColor="@color/darkPink"
-        android:textColorHint="@color/darkPink"
-        android:hint="Add your appointment summary"/>
+        android:textSize="16dp"
+        android:text="Date and time"/>
+
+    <EditText
+        android:id="@+id/date_time"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/darkPink"
+        app:strokeColor="#00296b"
+        app:strokeWidth="3dp"
+        android:textStyle="bold"
+        android:layout_marginStart="75dp"
+        android:textColor="@color/darkPink"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="60dp"
+        android:textSize="16dp"
+        android:textColor="@color/darkPink"
+        android:textStyle="bold"
+        android:text="Discussed Topic"/>
+
+    <EditText
+        android:id="@+id/appointmentTopic"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/darkPink"
+        android:inputType="text"
+        android:textColor="@color/darkPink"
+        android:textStyle="bold"
+        app:strokeColor="#00296b"
+        app:strokeWidth="3dp" />
 
     <Button
         android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:backgroundTint="@android:color/transparent"
+        android:backgroundTint="@color/pink"
         app:strokeColor="#00296b"
         app:strokeWidth="3dp"
-        android:layout_gravity="center"
+        android:layout_gravity="right"
+        android:layout_marginEnd="57dp"
         android:text="Add"
-        android:background="@drawable/button_bg2"
+        android:textStyle="bold"
         android:textColor="@color/purple" />
 
 </LinearLayout>

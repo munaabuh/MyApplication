@@ -31,7 +31,7 @@ public class AddAppointmentActivity extends AppCompatActivity {
     private Time time;
     private Button add;
     DatabaseReference myRef;
-    private EditText date_time,appointmentBody;
+    private EditText date_time,appointmentTopic, therapistName;
     private Appointment a = new Appointment();
     private FirebaseDatabase database = FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
 
@@ -41,18 +41,16 @@ public class AddAppointmentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_appointment);
 
-        String [] therapists = new String[]{"Elisabeth Wajnryt", "Orli Jacobs", "Wendy Gordon", "Liat Gamzo", "Natasha Miller Gutman", "Jennifer Trugeman"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.drop_down_item, therapists);
-      //  AutoCompleteTextView autoCompleteTextView = findViewById(R.id.therapistName);
-    //    autoCompleteTextView.setAdapter(adapter);
+        //String [] therapists = new String[]{"Elisabeth Wajnryt", "Orli Jacobs", "Wendy Gordon", "Liat Gamzo", "Natasha Miller Gutman", "Jennifer Trugeman"};
+        //ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.drop_down_item, therapists);
 
 
         String user = FirebaseAuth.getInstance().getUid();
         myRef = database.getReference("users/" + user + "/Appointments");
         add = findViewById(R.id.add);
 
-
-        appointmentBody = findViewById(R.id.appointmentBody);
+        therapistName = findViewById(R.id.therapistName);
+        appointmentTopic = findViewById(R.id.appointmentTopic);
         date_time = findViewById(R.id.date_time);
         date_time.setInputType(InputType.TYPE_NULL);
         date_time.setOnClickListener(new View.OnClickListener() {
@@ -66,7 +64,7 @@ public class AddAppointmentActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), AppointmentListActivity.class);
-                //a = new Appointment(date.toString(), time.toString(), therapistName.getText().toString(), appointmentBody.getText().toString());
+                a = new Appointment(date.toString(), time.toString(), therapistName.getText().toString(), appointmentTopic.getText().toString());
                 //Log.d("REMINDER: ",r.toString());
                 myRef.push().setValue(a);
                 startActivity(i);
@@ -91,7 +89,7 @@ public class AddAppointmentActivity extends AppCompatActivity {
                         calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
                         calendar.set(Calendar.MINUTE, minute);
 
-                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yy HH:mm");
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yy");
 
                         date_time_in.setText(simpleDateFormat.format(calendar.getTime()));
                         time = new Time(hourOfDay, minute, 0);
