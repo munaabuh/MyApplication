@@ -280,16 +280,14 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.settings_menu:
-                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+            case R.id.aboutUs_menu:
+                Intent i= new Intent(this, AboutUsActivity.class);
                 break;
             case R.id.exit_menu:
-                Intent i= new Intent(this, ProfileActivity.class);
-                startActivity(i);
                 this.finish();
                 break;
             case R.id.help_menu:
-                Intent intent= new Intent(this, AboutUsActivity.class);
+                Intent intent= new Intent(this, HelpActivity.class);
                 startActivity(intent);
         }
 

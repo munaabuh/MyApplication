@@ -11,7 +11,7 @@
         android:title="Help"/>
 
     <item
-        android:id="@+id/settings_menu"
-        android:title="Settings" />
+        android:id="@+id/aboutUs_menu"
+        android:title="About Us" />
 
 </menu>
