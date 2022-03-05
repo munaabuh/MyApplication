@@ -54,11 +54,12 @@
 
     <Button
         android:layout_marginTop="15dp"
-        android:background="@drawable/button_bg"
+        android:background="@drawable/button_bg2"
         android:text="Sign Up"
+        android:textStyle="bold"
         android:layout_marginStart="250dp"
         android:onClick="signUp"
-        android:textColor="@color/white"
+        android:textColor="@color/darkPink"
         android:id="@+id/buttonSignUp"
         android:layout_width="100dp"
         android:layout_height="wrap_content"/>
@@ -81,10 +82,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:layout_marginStart="250dp"
-        android:background="@drawable/button_bg"
+        android:background="@drawable/button_bg2"
         android:onClick="logIn"
         android:text="Log In"
-        android:textColor="@color/white" />
+        android:textStyle="bold"
+        android:textColor="@color/darkPink" />
 
 
 

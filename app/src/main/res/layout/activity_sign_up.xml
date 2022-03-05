@@ -10,128 +10,197 @@
     android:background="@drawable/pink"
     tools:context=".SignUpActivity">
 
-    <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/logo"/>
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:id="@+id/linear_ll"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Here is your first step with us!"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/purple"/>
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/logo"
+                android:layout_gravity="right"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
-        android:text="Welcome to Sanctum ;)"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="65dp"
+        android:textStyle="bold"
+        android:layout_gravity="left"
+        android:textColor="@color/darkPink"
+        android:textSize="16dp"
+        android:text="Name"/>
 
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="Name"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/darkPink"
         android:drawableEnd="@drawable/person_icon"
         android:inputType="text"
         android:backgroundTint="@color/purple"
         android:padding="8dp" />
-    <EditText
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="65dp"
+        android:textStyle="bold"
+        android:layout_gravity="left"
+        android:textColor="@color/darkPink"
+        android:textSize="16dp"
+        android:text="Surname"/>
+
+
+    <EditText
         android:id="@+id/editTextSurname"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="Surname"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/darkPink"
         android:drawableEnd="@drawable/pen_icon"
         android:backgroundTint="@color/purple"
         android:inputType="text"
         android:padding="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="65dp"
+        android:textStyle="bold"
+        android:layout_gravity="left"
+        android:textColor="@color/darkPink"
+        android:textSize="16dp"
+        android:text="Email"/>
+
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="Email"
-        android:textColor="@color/black"
+        android:textColor="@color/darkPink"
         android:drawableEnd="@drawable/email_icon"
-        android:textColorHint="@color/black"
         android:backgroundTint="@color/purple"
-
         android:inputType="textEmailAddress"
         android:padding="8dp" />
-    <EditText
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="65dp"
+        android:textStyle="bold"
+        android:layout_gravity="left"
+        android:textColor="@color/darkPink"
+        android:textSize="16dp"
+        android:text="Birthday"/>
+
+    <EditText
         android:id="@+id/editTextBirthday"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="Birthday"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/darkPink"
         android:drawableEnd="@drawable/calendar_icon"
         android:inputType="date"
         android:backgroundTint="@color/purple"
         android:padding="8dp" />
-    <EditText
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="65dp"
+        android:textStyle="bold"
+        android:layout_gravity="left"
+        android:textColor="@color/darkPink"
+        android:textSize="16dp"
+        android:text="Password"/>
+
+    <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="Password"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
+        android:textColor="@color/darkPink"
         android:drawableEnd="@drawable/lock_icon"
         android:backgroundTint="@color/purple"
         android:inputType="textPassword"
         android:padding="8dp" />
 
     <TextView
-        android:text="Gender"
-        android:textSize="24sp"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:id="@+id/textViewGender"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="65dp"
+        android:textStyle="bold"
+        android:layout_gravity="left"
+        android:textColor="@color/darkPink"
+        android:textSize="16dp"
+        android:text="Gender"
+        android:id="@+id/textViewGender"/>
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center">
         <RadioButton
-            android:id="@+id/radioButtonFemale"
+            android:id="@+id/radioButtonMale"
             android:layout_width="wrap_content"
             android:gravity="center"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="Female"/>
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/purple"
+            android:text="Male"/>
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/radioButtonMale"
-            android:textSize="20sp"
+            android:id="@+id/radioButtonFemale"
+            android:textSize="18dp"
+            android:textColor="@color/purple"
+            android:textStyle="bold"
             android:gravity="center"
-            android:text="Male"/>
+            android:text="Female"/>
 
     </RadioGroup>
 
     <Button
         android:id="@+id/buttonSubmit"
-        android:layout_width="186dp"
+        android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:layout_margin="8dp"
+        android:layout_marginStart="150dp"
         android:background="@drawable/button_bg"
         android:onClick="submit"
         android:padding="8dp"
         android:text="Register"
+        android:layout_marginEnd="10dp"
         android:textColor="@color/white"
         android:textStyle="bold" />
 

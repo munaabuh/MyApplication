@@ -60,7 +60,7 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
 
     }
 
-    public void submit(View view){
+   public void submit(View view){
 
         //Intent intent = new Intent(this, MainActivity.class);
 
