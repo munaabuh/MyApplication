@@ -24,8 +24,6 @@ public class DetailActivity extends AppCompatActivity {
         if(fileHandler!=null)
             tvFileContent.setText(fileHandler.getContent());
 
-
-
     }
     public void loadContentByCategory(String category){
         if(category.equals("mentalHealth")){

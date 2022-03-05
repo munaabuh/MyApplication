@@ -127,10 +127,14 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
         switch (item.getItemId()){
             case R.id.settings_menu:
                 Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+                Intent i= new Intent(this, ProfileActivity.class);
                 break;
             case R.id.exit_menu:
                 this.finish();
                 break;
+            case R.id.help_menu:
+                Intent intent= new Intent(this, AboutUsActivity.class);
+                startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

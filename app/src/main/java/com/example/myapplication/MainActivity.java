@@ -284,8 +284,13 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
                 Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.exit_menu:
+                Intent i= new Intent(this, ProfileActivity.class);
+                startActivity(i);
                 this.finish();
                 break;
+            case R.id.help_menu:
+                Intent intent= new Intent(this, AboutUsActivity.class);
+                startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
@@ -303,7 +308,7 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         startActivity(intent);
     }
 
-    public void aboutUS(View view){
+    public void aboutUs(View view){
         Intent intent = new Intent(this, AboutUsActivity.class);
         startActivity(intent);
     }
