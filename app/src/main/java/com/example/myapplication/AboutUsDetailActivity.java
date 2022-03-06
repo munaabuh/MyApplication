@@ -30,9 +30,18 @@ public class AboutUsDetailActivity extends AppCompatActivity {
             fileHandler= new FileHandler("OurMissionAndValues_txt",this);
             fileHandler.readFile();
         }
-       else if(category.equals("medicalExpertise")){}
-       else if(category.equals("privacyAndSecurity")){}
-       else {}
+       else if(category.equals("medicalExpertise")){
+           fileHandler= new FileHandler("MedicalExpertise_txt", this);
+           fileHandler.readFile();
+        }
+       else if(category.equals("PrivacyAndSecurity_txt")){
+           fileHandler= new FileHandler("PrivacyAndSecurity", this);
+           fileHandler.readFile();
+        }
+       else {
+           fileHandler= new FileHandler("TheCreators_txt", this);
+           fileHandler.readFile();
+        }
     }
     public void back(View view){
         Intent intent= new Intent(AboutUsDetailActivity.this, AboutUsActivity.class);
