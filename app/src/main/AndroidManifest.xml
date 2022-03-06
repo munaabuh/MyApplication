@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
         <activity
+            android:name=".AboutUsDetailActivity"
+            android:exported="true" />
+        <activity
             android:name=".HelpActivity"
             android:exported="true" />
         <activity

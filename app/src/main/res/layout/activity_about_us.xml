@@ -28,6 +28,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
+                    android:onClick="back"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/ic_arrow_back"
@@ -54,8 +55,8 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         app:cardCornerRadius="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         app:cardBackgroundColor="@color/blue">
 
         <TextView
@@ -77,8 +78,8 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         app:cardCornerRadius="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         app:cardBackgroundColor="@color/green">
 
         <TextView
@@ -86,7 +87,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/darkGreen"
             android:textStyle="bold"
-            android:layout_marginStart="70dp"
+            android:layout_marginStart="80dp"
             android:layout_marginTop="80dp"
             android:textSize="24dp"
             android:text="Our Medical Expertise"/>
@@ -100,8 +101,8 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         app:cardCornerRadius="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
         app:cardBackgroundColor="@color/pink">
 
         <TextView
@@ -116,14 +117,14 @@
 
     </androidx.cardview.widget.CardView>
      <androidx.cardview.widget.CardView
-         android:id="@+id/membership"
+         android:id="@+id/creators"
          android:layout_width="400dp"
          android:layout_marginTop="20dp"
          android:layout_height="200dp"
          android:layout_gravity="center"
          app:cardCornerRadius="20dp"
-         android:layout_marginStart="20dp"
-         android:layout_marginEnd="20dp"
+         android:layout_marginStart="40dp"
+         android:layout_marginEnd="40dp"
          app:cardBackgroundColor="@color/babyPurple">
 
             <TextView
@@ -134,7 +135,7 @@
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="80dp"
                 android:textSize="24dp"
-                android:text="Membership"/>
+                android:text="The Creators"/>
 
         </androidx.cardview.widget.CardView>
 
