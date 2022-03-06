@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,12 +8,100 @@
     android:layout_gravity="center"
     tools:context=".AboutUsActivity">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="50dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:id="@+id/linear_ll"
+                android:gravity="left"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:layout_alignParentLeft="true"/>
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About Sanctum"
+                    android:textSize="24dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple"
+                    android:layout_marginStart="70dp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
     <androidx.cardview.widget.CardView
+        android:id="@+id/missionAndValues"
         android:layout_width="400dp"
         android:layout_marginTop="20dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
         app:cardCornerRadius="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardBackgroundColor="@color/blue">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkBlue"
+            android:textStyle="bold"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="80dp"
+            android:textSize="24dp"
+            android:text="Our Mission and Values "/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/medicalExpertise"
+        android:layout_width="400dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardBackgroundColor="@color/green">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkGreen"
+            android:textStyle="bold"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="80dp"
+            android:textSize="24dp"
+            android:text="Our Medical Expertise"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/privacyAndSecurity"
+        android:layout_width="400dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         app:cardBackgroundColor="@color/pink">
 
         <TextView
@@ -21,53 +109,35 @@
             android:layout_height="wrap_content"
             android:textColor="@color/darkPink"
             android:textStyle="bold"
-            android:layout_marginStart="140dp"
+            android:layout_marginStart="80dp"
             android:layout_marginTop="80dp"
             android:textSize="24dp"
-            android:text="About us"/>
+            android:text="Privacy and Security"/>
 
     </androidx.cardview.widget.CardView>
+     <androidx.cardview.widget.CardView
+         android:id="@+id/membership"
+         android:layout_width="400dp"
+         android:layout_marginTop="20dp"
+         android:layout_height="200dp"
+         android:layout_gravity="center"
+         app:cardCornerRadius="20dp"
+         android:layout_marginStart="20dp"
+         android:layout_marginEnd="20dp"
+         app:cardBackgroundColor="@color/babyPurple">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:textColor="@color/darkPink"
-        android:text="Who are we?"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/purple"
+                android:textStyle="bold"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="80dp"
+                android:textSize="24dp"
+                android:text="Membership"/>
 
+        </androidx.cardview.widget.CardView>
 
+    </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:textColor="@color/darkPink"
-        android:text="What does Sanctum mean?"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:textColor="@color/darkPink"
-        android:text="How do I sign up?"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:textColor="@color/darkPink"
-        android:text="Want to join our team?"/>
-
-</LinearLayout>
+</ScrollView>
