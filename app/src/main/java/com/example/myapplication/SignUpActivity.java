@@ -22,7 +22,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Date;
 import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity implements DialogInterface.OnClickListener{
@@ -155,6 +158,13 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
                             FirebaseUser user = mAuth.getCurrentUser();
                             Intent i = new Intent(SignUpActivity.this, MainActivity.class);
                             startActivity(i);
+                            User u=new User(editTextName.getText()+"",editTextSurname.getText()+"",editTextEmail.getText()+"",(Date)editTextBirthday.getText());
+                            FirebaseDatabase db=FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
+                            DatabaseReference root=db.getReference("users/"+mAuth.getCurrentUser().getUid());
+                            root.push().setValue(u);
+                            Log.i("Stam", u.toString());
+                            Log.i("Stam",mAuth.getCurrentUser().getUid());
+
 
                         } else {
                             // If sign in fails, display a message to the user.

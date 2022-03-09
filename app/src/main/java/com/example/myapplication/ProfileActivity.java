@@ -12,10 +12,12 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,16 +29,16 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.io.FileNotFoundException;
 import java.nio.channels.InterruptedByTimeoutException;
 
-public class ProfileActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
+public class ProfileActivity extends AppCompatActivity {
 
     //request for camera activity result
-    private static final int CAMERA_REQUEST = 0;
-    private static final int GALLERY_REQUEST = 1;
+   // private static final int CAMERA_REQUEST = 0;
+    //private static final int GALLERY_REQUEST = 1;
 
     //attributes
     private ImageView imageViewProfile;
-    private Button buttonCamera, reminderButton, therapistButton, appointmentButton;
-    private TextView userTV;
+    //private Button buttonCamera, reminderButton, therapistButton, appointmentButton;
+    private TextView userTV, name;
 
     //for picture of camera
     private Bitmap picture;
@@ -51,54 +53,33 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_profile);
 
         //gets reference for the design components
-       // buttonCamera = findViewById(R.id.buttonCamera);
-        buttonCamera.setOnClickListener(this);
-        buttonCamera.setOnLongClickListener(this);
+        //buttonCamera = findViewById(R.id.buttonCamera);
+        //buttonCamera.setOnClickListener(this);
+        //buttonCamera.setOnLongClickListener(this);
 
-        //reminderButton = findViewById(R.id.reminderButton);
-        //therapistButton = findViewById(R.id.therapistsButton);
-        //appointmentButton = findViewById(R.id.appointmentButton);
 
-       // imageViewProfile = findViewById(R.id.imageViewProfile);
 
-        //userTV = findViewById(R.id.userTV);
+       imageViewProfile = findViewById(R.id.imageViewProfile);
+
+        userTV = findViewById(R.id.userTV);
 
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         String email = mAuth.getCurrentUser().getEmail();
 
         userTV.setText(email);
+
+        name= findViewById(R.id.name);
+        mAuth = FirebaseAuth.getInstance();
+        String name= mAuth.getCurrentUser().getDisplayName();
+        String n= mAuth.getCurrentUser().getEmail();
+        Log.i("Stam","name"+name+" n"+n);
+
+
     }
 
-    @Override
-    public void onClick(View view) {
-            Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            startActivityForResult(i, CAMERA_REQUEST);
-    }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == CAMERA_REQUEST){
-            if(resultCode == RESULT_OK){
-                picture = (Bitmap) data.getExtras().get("data");
-                //set image captured to be the new image
-                imageViewProfile.setImageBitmap(picture);
-            }
-        }
-        else{
-            if(resultCode == RESULT_OK){
-                Uri targetUri = data.getData();
-                try{
-                    //decode an input stream into a bitmap
-                    picture = BitmapFactory.decodeStream(getContentResolver().openInputStream(targetUri));
-                    imageViewProfile.setImageBitmap(picture);
-                }
-                catch (FileNotFoundException e){
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
+
+
 
     @Override
     //inflates the design of the required menu on top of the activity
@@ -125,13 +106,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public boolean onLongClick(View view) {
-            Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-            startActivityForResult(i, GALLERY_REQUEST);
 
-        return false;
-    }
 
     public void reminders(View view){
         Intent intent = new Intent(this, ArrayListActivity.class);

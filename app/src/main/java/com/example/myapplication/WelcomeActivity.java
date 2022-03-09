@@ -36,7 +36,7 @@ public class WelcomeActivity extends AppCompatActivity implements DialogInterfac
 
 
         String name = getIntent().getStringExtra("name");
-        welcomeNote.setText("Hi there!");
+     //   welcomeNote.setText("Hi there!");
 
     }
     public void logIn(View view){
