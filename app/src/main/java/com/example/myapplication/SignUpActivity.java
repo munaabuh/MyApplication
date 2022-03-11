@@ -79,27 +79,6 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
 
         }
 
-
-
-   /* public boolean validate(String str){
-
-        Pattern upperCase =  Pattern.compile("[A - Z]");
-        Pattern lowerCase = Pattern.compile("[a - z]");
-        Pattern number = Pattern.compile("[0 - 9]");
-
-        if(!upperCase.matcher(str).find())
-            return false;
-
-        if(!lowerCase.matcher(str).find())
-            return false;
-
-        if(!number.matcher(str).find())
-            return false;
-
-        return true;
-
-    }*/
-
     @Override
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -159,12 +138,6 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
                             Intent i = new Intent(SignUpActivity.this, MainActivity.class);
                             startActivity(i);
                             User u=new User(editTextName.getText()+"",editTextSurname.getText()+"",editTextEmail.getText()+"",(Date)editTextBirthday.getText());
-                            FirebaseDatabase db=FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
-                            DatabaseReference root=db.getReference("users/"+mAuth.getCurrentUser().getUid());
-                            root.push().setValue(u);
-                            Log.i("Stam", u.toString());
-                            Log.i("Stam",mAuth.getCurrentUser().getUid());
-
 
                         } else {
                             // If sign in fails, display a message to the user.

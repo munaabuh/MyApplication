@@ -24,14 +24,14 @@
         android:text="Account Settings"
         android:textSize="16dp"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
+        android:textColor="@color/purple"
         android:gravity="center"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Logout"
-        android:textColor="@color/black"
+        android:textColor="@color/purple"
         android:layout_alignParentRight="true"
         android:textStyle="normal"
         android:textSize="15dp"/>
