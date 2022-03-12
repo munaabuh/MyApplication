@@ -24,8 +24,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
@@ -40,12 +44,21 @@ public class ProfileActivity extends AppCompatActivity implements DialogInterfac
     //attributes
     private ImageView imageViewProfile;
     private Button buttonCamera, reminderButton, therapistButton, appointmentButton;
-    private TextView userTV, name;
+    private TextView userTV, name, surName,email,birthday, password;
 
     //for picture of camera
     private String pic;
     private Bitmap picture;
 
+    private DatabaseReference userRef;
+    //get instance of authentication project in FB console
+    private FirebaseAuth maFirebaseAuth = FirebaseAuth.getInstance();
+    //gets the root of the real time database in the FB console
+    private FirebaseDatabase database = FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
+
+
+    private FirebaseUser user;
+    private DatabaseReference myRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
@@ -58,14 +71,38 @@ public class ProfileActivity extends AppCompatActivity implements DialogInterfac
         buttonCamera.setOnClickListener(this);
         buttonCamera.setOnLongClickListener(this);
 
-       imageViewProfile = findViewById(R.id.imageViewProfile);
+        imageViewProfile = findViewById(R.id.imageViewProfile);
 
         userTV = findViewById(R.id.userTV);
-
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
-        String email = mAuth.getCurrentUser().getEmail();
+        String Email = mAuth.getCurrentUser().getEmail();
+        userTV.setText(Email);
 
-        userTV.setText(email);
+        name= findViewById(R.id.name);
+        surName= findViewById(R.id.surName);
+        email= findViewById(R.id.email);
+        birthday= findViewById(R.id.birthday);
+        password= findViewById(R.id.password);
+
+        myRef= database.getReference("users/");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+                    if(user.getUid().equals(dataSnapshot.getKey())){
+                        User u= dataSnapshot.getValue(User.class);
+                        updateUserData(u);
+                    }
+                }
+            }
+
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
     }
 
@@ -160,4 +197,13 @@ public class ProfileActivity extends AppCompatActivity implements DialogInterfac
     @Override
     public void onClick(DialogInterface dialogInterface, int i) {
     }
+
+    private void updateUserData(User user){
+        name.setText((user.getName()));
+        surName.setText((user.getSurName()));
+        email.setText((user.getEmail()));
+        birthday.setText((user.getBirthday()));
+        password.setText((user.getPassword()));
+    }
+
 }

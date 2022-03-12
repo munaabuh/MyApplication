@@ -129,7 +129,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/darkPink"
         android:drawableEnd="@drawable/calendar_icon"
-        android:inputType="date"
+        android:inputType="text"
         android:backgroundTint="@color/purple"
         android:padding="8dp" />
 

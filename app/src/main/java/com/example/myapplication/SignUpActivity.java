@@ -35,6 +35,8 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
     private Button buttonSubmit;
     private TextView textViewGender;
     private static final String TAG = "FIREBASE";
+    private  FirebaseAuth firebaseAuth= FirebaseAuth.getInstance();
+    private FirebaseDatabase database= FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
     private RadioButton radioButtonFemale, radioButtonMale;
     private EditText editTextName, editTextSurname,editTextEmail, editTextBirthday, editTextPassword;
 
@@ -135,9 +137,12 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            DatabaseReference myRef;
+                            User u= new User(editTextName.getText().toString(), editTextSurname.getText().toString(), editTextEmail.getText().toString(), editTextBirthday.getText().toString(), editTextPassword.getText().toString());
+                            myRef= database.getReference("users/"+ user.getUid());
+                            myRef.setValue(u);
                             Intent i = new Intent(SignUpActivity.this, MainActivity.class);
                             startActivity(i);
-                            User u=new User(editTextName.getText()+"",editTextSurname.getText()+"",editTextEmail.getText()+"",(Date)editTextBirthday.getText());
 
                         } else {
                             // If sign in fails, display a message to the user.

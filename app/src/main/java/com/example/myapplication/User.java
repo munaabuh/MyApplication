@@ -6,13 +6,15 @@ public class User {
     protected String name;
     protected String surName;
     protected String email;
-    protected Date birthday;
+    protected String birthday;
+    protected String password;
 
-    public User(String name, String surName, String email, Date birthday) {
+    public User(String name, String surName, String email, String birthday, String password) {
         this.name = name;
         this.surName = surName;
         this.email = email;
         this.birthday = birthday;
+        this.password= password;
     }
 
     public User(){}
@@ -41,12 +43,20 @@ public class User {
         this.email = email;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
