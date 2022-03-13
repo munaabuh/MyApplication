@@ -84,7 +84,7 @@ public class WelcomeActivity extends AppCompatActivity implements DialogInterfac
                 startActivity(i);
                 break;
             case R.id.exit_menu:
-                this.finish();// closeApplication();
+                this.closeApplication();// closeApplication();
                 break;
             case R.id.help_menu:
                 Intent intent = new Intent(this, HelpActivity.class);
@@ -94,4 +94,10 @@ public class WelcomeActivity extends AppCompatActivity implements DialogInterfac
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void closeApplication(){
+        this.finish();
+        moveTaskToBack(true);
+    }
+
 }

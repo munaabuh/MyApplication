@@ -94,4 +94,9 @@ public class PsychiatristListActivity extends AppCompatActivity {
         });
     }
 
+    public void back(View view){
+        Intent intent= new Intent(this, MyTherapistsArrayListActivity.class);
+        startActivity(intent);
+    }
+
 }

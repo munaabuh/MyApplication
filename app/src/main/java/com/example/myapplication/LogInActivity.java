@@ -129,7 +129,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
                 Intent i= new Intent(this, AboutUsActivity.class);
                 break;
             case R.id.exit_menu:
-                this.finish();
+                this.closeApplication();
                 break;
             case R.id.help_menu:
                 Intent intent= new Intent(this, HelpActivity.class);
@@ -137,6 +137,11 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void closeApplication(){
+        this.finish();
+        moveTaskToBack(true);
     }
 
    public void login(String email, String password){

@@ -94,7 +94,7 @@ public class AppointmentListActivity extends AppCompatActivity {
 
     }
 
-    public void backwards(View view){
+    public void back(View view){
         Intent i = new Intent(this, ProfileActivity.class);
         startActivity(i);
     }

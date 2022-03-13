@@ -84,6 +84,7 @@ public class ProfileActivity extends AppCompatActivity implements DialogInterfac
         birthday= findViewById(R.id.birthday);
         password= findViewById(R.id.password);
 
+        user = mAuth.getCurrentUser();
         myRef= database.getReference("users/");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -95,8 +96,6 @@ public class ProfileActivity extends AppCompatActivity implements DialogInterfac
                     }
                 }
             }
-
-
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
@@ -168,7 +167,7 @@ public class ProfileActivity extends AppCompatActivity implements DialogInterfac
                 startActivity(i);
                 break;
             case R.id.exit_menu:
-                this.finish();
+                this.closeApplication();
                 break;
             case R.id.help_menu:
                 Intent intent= new Intent(this, HelpActivity.class);
@@ -178,6 +177,10 @@ public class ProfileActivity extends AppCompatActivity implements DialogInterfac
         return super.onOptionsItemSelected(item);
     }
 
+    public void closeApplication(){
+        this.finish();
+        moveTaskToBack(true);
+    }
 
     public void reminders(View view){
         Intent intent = new Intent(this, ArrayListActivity.class);
