@@ -105,12 +105,6 @@ public class ProfileActivity extends AppCompatActivity implements DialogInterfac
 
     }
 
-    public void bitmapToString(Bitmap bitmap){
-        ByteArrayOutputStream baos=new  ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG,100, baos);
-        byte [] arr=baos.toByteArray();
-        this.pic= Base64.encodeToString(arr, Base64.DEFAULT);
-    }
 
     @Override
     public boolean onLongClick(View view) {

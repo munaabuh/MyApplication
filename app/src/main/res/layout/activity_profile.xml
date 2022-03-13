@@ -51,6 +51,7 @@
                 android:text="Camera / Gallery"
                 android:layout_marginBottom="7dp"
                 android:textStyle="bold"
+                android:gravity="center"
                 android:layout_marginTop="7dp"
                 android:textColor="@color/purple"
                 android:textSize="16dp"/>
@@ -222,6 +223,23 @@
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Favorite Articles"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/darkPink"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

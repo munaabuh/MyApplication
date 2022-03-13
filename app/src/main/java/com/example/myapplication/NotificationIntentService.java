@@ -32,8 +32,8 @@ public class NotificationIntentService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         Notification.Builder noBuilder = new Notification.Builder(this);
         //TODO change the notification title
-        noBuilder.setContentTitle("this is the notification title");
-        noBuilder.setContentText("this is the notification body text");
+        noBuilder.setContentTitle("Sanctum");
+        noBuilder.setContentText("Your account has been used to log into Sanctum");
         noBuilder.setSmallIcon(R.drawable.ic_snowflake);
 
         //this intent will be pending until the user clicks on the notification
