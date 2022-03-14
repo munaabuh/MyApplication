@@ -235,4 +235,11 @@ public class ProfileActivity extends AppCompatActivity implements DialogInterfac
     public void onClick(DialogInterface dialogInterface, int i) {
     }
 
+    public void logOut(View view){
+        mAuth.signOut();
+        this.finish();
+        Intent intent= new Intent(ProfileActivity.this, WelcomeActivity.class);
+        startActivity(intent);
+    }
+
 }
