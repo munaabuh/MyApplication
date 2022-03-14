@@ -8,6 +8,8 @@ public class User {
     protected String email;
     protected String birthday;
     protected String password;
+    protected String key;
+    protected String image;
 
     public User(String name, String surName, String email, String birthday, String password) {
         this.name = name;
@@ -57,6 +59,22 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     @Override

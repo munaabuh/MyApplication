@@ -31,8 +31,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.nio.channels.InterruptedByTimeoutException;
 
 public class ProfileActivity extends AppCompatActivity implements DialogInterface.OnClickListener, View.OnClickListener, View.OnLongClickListener{
@@ -42,23 +44,24 @@ public class ProfileActivity extends AppCompatActivity implements DialogInterfac
     private static final int GALLERY_REQUEST = 1;
 
     //attributes
+    private Button buttonCamera;
     private ImageView imageViewProfile;
-    private Button buttonCamera, reminderButton, therapistButton, appointmentButton;
     private TextView userTV, name, surName,email,birthday, password;
 
     //for picture of camera
     private String pic;
     private Bitmap picture;
 
+    private User u;
     private DatabaseReference userRef;
     //get instance of authentication project in FB console
-    private FirebaseAuth maFirebaseAuth = FirebaseAuth.getInstance();
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     //gets the root of the real time database in the FB console
     private FirebaseDatabase database = FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
 
 
-    private FirebaseUser user;
-    private DatabaseReference myRef;
+    private FirebaseUser user= mAuth.getCurrentUser();
+    private DatabaseReference myRef= database.getReference("/users"+ user.getUid());
 
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
@@ -97,14 +100,49 @@ public class ProfileActivity extends AppCompatActivity implements DialogInterfac
                 }
             }
 
+            private void updateUserData(User user){
+                name.setText((user.getName()));
+                surName.setText((user.getSurName()));
+                email.setText((user.getEmail()));
+                birthday.setText((user.getBirthday()));
+                password.setText((user.getPassword()));
+                if(user.getImage() != null)
+                {
+                    Bitmap b= stringToBitMap(user.getImage());
+                    imageViewProfile.setImageBitmap(b);
+                }
+            }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
+    }
+
+    public void saveImage(Bitmap bitmap){
+        DatabaseReference myRef1= database.getReference("users/" + user.getUid());
+        ByteArrayOutputStream baos= new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] arr= baos.toByteArray();
+        pic= Base64.encodeToString(arr, Base64.DEFAULT);
+        myRef1.child("image").setValue(pic);
 
     }
 
+    public Bitmap stringToBitMap(String image){
+        try{
+            byte [] encodeByte= Base64.decode(image,Base64.DEFAULT);
+
+            InputStream inputStream  = new ByteArrayInputStream(encodeByte);
+            Bitmap bitmap  = BitmapFactory.decodeStream(inputStream);
+            return bitmap;
+        }
+        catch(Exception e){
+            e.getMessage();
+            return null;
+        }
+    }
 
     @Override
     public boolean onLongClick(View view) {
@@ -129,6 +167,7 @@ public class ProfileActivity extends AppCompatActivity implements DialogInterfac
                 picture = (Bitmap) data.getExtras().get("data");
                 //set image captured to be the new image
                 imageViewProfile.setImageBitmap(picture);
+                saveImage(picture);
             }
         }
         else{
@@ -138,6 +177,7 @@ public class ProfileActivity extends AppCompatActivity implements DialogInterfac
                     //decode an input stream into a bitmap
                     picture = BitmapFactory.decodeStream(getContentResolver().openInputStream(targetUri));
                     imageViewProfile.setImageBitmap(picture);
+                    saveImage(picture);
                 }
                 catch (FileNotFoundException e){
                     e.printStackTrace();
@@ -193,14 +233,6 @@ public class ProfileActivity extends AppCompatActivity implements DialogInterfac
 
     @Override
     public void onClick(DialogInterface dialogInterface, int i) {
-    }
-
-    private void updateUserData(User user){
-        name.setText((user.getName()));
-        surName.setText((user.getSurName()));
-        email.setText((user.getEmail()));
-        birthday.setText((user.getBirthday()));
-        password.setText((user.getPassword()));
     }
 
 }
