@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/pink"
+    android:background="@drawable/introo"
     tools:context=".LogInActivity">
 
     <RelativeLayout
@@ -31,13 +31,13 @@
                 android:gravity="center"
                 android:layout_marginTop="30dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/purple"/>
+                android:layout_marginStart="30dp"
+                android:textColor="@color/darkPink"/>
 
             <ImageView
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:layout_marginRight="6dp"
+                android:layout_marginRight="30dp"
                 android:layout_marginBottom="10dp"
                 android:src="@drawable/logo"
                 android:layout_gravity="right"/>
@@ -93,8 +93,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
         android:textStyle="bold"
         android:layout_gravity="left"
         android:textColor="@color/darkPink"
@@ -105,7 +105,7 @@
         android:id="@+id/buttonLogIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="70dp"
         android:layout_gravity="left"
         android:background="@drawable/button_bg2"
@@ -118,8 +118,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
         android:textStyle="bold"
         android:layout_gravity="left"
         android:textColor="@color/darkPink"
@@ -130,7 +130,7 @@
         android:id="@+id/buttonSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
         android:background="@drawable/button_bg2"
         android:onClick="signUp"
