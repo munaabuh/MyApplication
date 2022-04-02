@@ -8,12 +8,48 @@
     android:background="@drawable/introo"
     tools:context=".HelpActivity">
 
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:id="@+id/linear_ll"
+            android:gravity="left"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_marginStart="30dp"
+                android:id="@+id/backArrow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_alignParentLeft="true"/>
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Help"
+                android:gravity="center"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:layout_marginRight="30dp"
+                android:textColor="@color/purple"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
     <androidx.cardview.widget.CardView
-        android:layout_marginTop="150dp"
-        android:layout_marginStart="40dp"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
         android:textAlignment="center"
         app:cardCornerRadius="20dp"
         android:backgroundTint="@color/cream"
@@ -26,19 +62,40 @@
             android:textColor="@color/darkPink"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:text="Get Started"/>
+            android:text="Contact Us"/>
 
     </androidx.cardview.widget.CardView>
 
+    <TextView
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:text="If you're having any problem with the app you can contact us via email: sanctumSupport@gmail.com"
+        android:layout_marginStart="50dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/darkPink"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:text="Or call our office: 043213687"
+        android:layout_marginStart="50dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/darkPink"
+        android:layout_marginTop="10dp"/>
+
+
     <androidx.cardview.widget.CardView
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="200dp"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
         android:textAlignment="center"
         app:cardCornerRadius="20dp"
         android:backgroundTint="@color/cream"
-        android:id="@+id/accountAndData">
+        android:id="@+id/accountAndDataCard">
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,5 +109,47 @@
 
     </androidx.cardview.widget.CardView>
 
+    <TextView
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:text="How to Sign Up?"
+        android:backgroundTint="@color/purple"
+        android:layout_marginStart="50dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/purple"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:text="In order to sign up, you are to fill the register form, using your right information. When creating a password, you ought to use both upperCase and lowerCase litters, numbers and your password should be at least 8 chars"
+        android:layout_marginStart="50dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/darkPink"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:text="How do we use your data?"
+        android:backgroundTint="@color/purple"
+        android:layout_marginStart="50dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/purple"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:text="The data we collect is merely necessary for us to provide you with our services, and we do not share it with other apps."
+        android:backgroundTint="@color/purple"
+        android:layout_marginStart="50dp"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/darkPink"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -20,6 +21,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class PsychiatristListActivity extends AppCompatActivity {
+
+    private ImageView backArrow;
 
     //the object of the view - design
     private ListView myListView;
@@ -92,11 +95,15 @@ public class PsychiatristListActivity extends AppCompatActivity {
 
             }
         });
+
+        backArrow = findViewById(R.id.backArrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PsychiatristListActivity.super.onBackPressed();
+            }
+        });
     }
 
-    public void back(View view){
-        Intent intent= new Intent(this, MyTherapistsArrayListActivity.class);
-        startActivity(intent);
-    }
 
 }

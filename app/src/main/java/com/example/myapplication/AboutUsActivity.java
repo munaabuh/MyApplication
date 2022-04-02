@@ -7,9 +7,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class AboutUsActivity extends AppCompatActivity implements DialogInterface.OnClickListener {
+
+    private ImageView backArrow;
     private CardView missionAndValues,medicalExpertise,privacyAndSecurity,creators;
 
     @Override
@@ -57,6 +60,13 @@ public class AboutUsActivity extends AppCompatActivity implements DialogInterfac
             }
         });
 
+        backArrow = findViewById(R.id.backArrow);
+        backArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AboutUsActivity.super.onBackPressed();
+            }
+        });
     }
 
     @Override
@@ -70,9 +80,5 @@ public class AboutUsActivity extends AppCompatActivity implements DialogInterfac
         }
     }
 
-    public void back(View view){
-        Intent intent= new Intent(AboutUsActivity.this, MainActivity.class);
-        startActivity(intent);
-    }
 
 }
