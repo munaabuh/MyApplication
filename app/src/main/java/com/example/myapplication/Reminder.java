@@ -6,9 +6,9 @@ import java.util.Date;
 public class Reminder {
 
     //attributes
-    private String date;
-    private String time;
-    private String notes;
+    protected String date;
+    protected String time;
+    protected String notes;
 
     //default constructor
     public Reminder() {}
@@ -49,7 +49,8 @@ public class Reminder {
 
     @Override
     public String toString(){
-        return "Reminder:" + " " + this.date
-                + " " + this.time + " " + this.notes;
+    return  this.notes + '\n' +
+            this.time + '\n' +
+            this.date;
     }
 }

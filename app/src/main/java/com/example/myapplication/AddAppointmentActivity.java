@@ -89,7 +89,7 @@ public class AddAppointmentActivity extends AppCompatActivity {
                         calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
                         calendar.set(Calendar.MINUTE, minute);
 
-                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yy");
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yy HH:mm");
 
                         date_time_in.setText(simpleDateFormat.format(calendar.getTime()));
                         time = new Time(hourOfDay, minute, 0);

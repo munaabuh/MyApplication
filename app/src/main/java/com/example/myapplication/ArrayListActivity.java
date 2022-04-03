@@ -65,7 +65,7 @@ public class ArrayListActivity extends AppCompatActivity{
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
               //myRef.push().setValue(new Item(2,true,"this is my first item",R.id.imageItem));
-              Toast.makeText(getApplicationContext(),"Item:" + list.get(i), Toast.LENGTH_LONG).show();
+              Toast.makeText(getApplicationContext(),"Reminder:" + list.get(i), Toast.LENGTH_LONG).show();
             }
         });
         myListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {

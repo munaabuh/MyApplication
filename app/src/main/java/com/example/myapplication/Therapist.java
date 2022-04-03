@@ -6,11 +6,11 @@ import java.time.DayOfWeek;
 public class Therapist {
 
     //attributes
-    private String phone;
-    private String name;
-    private String area;
-    private String major;
-    private String gender;
+    protected String phone;
+    protected String name;
+    protected String area;
+    protected String major;
+    protected String gender;
 
     //default constructor
     public Therapist() {}

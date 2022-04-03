@@ -6,14 +6,13 @@ import java.util.Date;
 public class Appointment {
 
     //attributes
-    private String date;
-    private String time;
-    private String summary;
-    private String therapist;
+    protected String date;
+    protected String time;
+    protected String summary;
+    protected String therapist;
 
     //default constructor
-    public Appointment() {
-    }
+    public Appointment() {}
 
     //constructor
     public Appointment(String date, String time, String summary, String therapist) {
