@@ -52,7 +52,9 @@ public class PsychiatristListActivity extends AppCompatActivity {
         list.add(new Therapist("0723971387", "Natasha Miller Gutman", "Tel Aviv , Hirzelya", "Expressive Arts Therapist", "female"));
         list.add(new Therapist("0723971435", "Jennifer Turgeman", "Herzliya, Pituach, Tel Aviv", "Creative Arts Therapist", "female"));
 
-        //database.getReference("therapists/" + UID + "/therapists").push().setValue(new Therapist("0723971435", "Jennifer Turgeman", "Herzliya, Pituach, Tel Aviv", "Creative Arts Therapist", "female"));
+        //database.getReference("therapists/" + UID + "/therapists").push().setValue(new Therapist("0723971435", "Jennifer Turgeman", "Herzliya,
+        // Pituach, Tel Aviv", "Creative Arts Therapist", "female"));
+
         //reference to the list view so it can be programmed
         myListView = findViewById(R.id.myListView);
 

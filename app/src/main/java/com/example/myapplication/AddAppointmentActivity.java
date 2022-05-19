@@ -65,7 +65,6 @@ public class AddAppointmentActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), AppointmentListActivity.class);
                 a = new Appointment(date.toString(), time.toString(), therapistName.getText().toString(), appointmentTopic.getText().toString());
-                //Log.d("REMINDER: ",r.toString());
                 myRef.push().setValue(a);
                 startActivity(i);
             }

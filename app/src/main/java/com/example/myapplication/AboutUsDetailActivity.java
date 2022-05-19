@@ -34,8 +34,8 @@ public class AboutUsDetailActivity extends AppCompatActivity {
            fileHandler= new FileHandler("MedicalExpertise_txt", this);
            fileHandler.readFile();
         }
-       else if(category.equals("PrivacyAndSecurity_txt")){
-           fileHandler= new FileHandler("PrivacyAndSecurity", this);
+       else if(category.equals("privacyAndSecurity")){
+           fileHandler= new FileHandler("PrivacyAndSecurity_txt", this);
            fileHandler.readFile();
         }
        else {

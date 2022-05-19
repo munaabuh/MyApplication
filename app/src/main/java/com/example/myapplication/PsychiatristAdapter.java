@@ -25,7 +25,7 @@ public class PsychiatristAdapter extends ArrayAdapter<Therapist>{
     private FirebaseAuth maFirebaseAuth = FirebaseAuth.getInstance();
     private String UID = maFirebaseAuth.getUid();
     private FirebaseDatabase database = FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
-    private  DatabaseReference myRef = database.getReference("users/" +UID +"/favorites");
+    private DatabaseReference myRef = database.getReference("users/" +UID +"/favorites");
 
 
 
@@ -57,7 +57,6 @@ public class PsychiatristAdapter extends ArrayAdapter<Therapist>{
                     favorite.setImageResource(R.drawable.filled_person_icon);
                 }
             });
-
         }
         return view;
     }

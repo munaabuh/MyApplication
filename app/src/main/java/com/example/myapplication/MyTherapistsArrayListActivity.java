@@ -59,9 +59,7 @@ public class MyTherapistsArrayListActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
+            public void onCancelled(@NonNull DatabaseError error) {}
         });
         //connects click listener to items in the list
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

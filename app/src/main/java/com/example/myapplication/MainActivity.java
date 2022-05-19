@@ -24,9 +24,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements DialogInterface.OnClickListener{
 
     private static final int NOTIFICATION_REMINDER_NIGHT = 1;
-    private TextView therapists, aboutUs;
     private Intent musicIntent;
-    private Button profileButton;
     private CardView mentalHealthCard, mindfulnessCard, therapyCard,anxietyTypes, anxietyCauses, anxietyTreatment, emotionalEatingSigns,
             emotionalEatingCauses, emotionalEatingTreatment, stressTypes, stressCauses, stressTreatment, depressionTypes, depressionCauses, depressionTreatment;
     private RelativeLayout anxietyCard, emotionalEatingCard, stressCard,depressionCard;
@@ -36,12 +34,6 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        aboutUs = findViewById(R.id.aboutUs);
-        therapists = findViewById(R.id.therapists);
-
-
-        profileButton= findViewById(R.id.profileButton);
 
         therapyCard = findViewById(R.id.therapyCard);
         therapyCard.setOnClickListener(new View.OnClickListener() {
@@ -282,6 +274,7 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         switch (item.getItemId()){
             case R.id.aboutUs_menu:
                 Intent i= new Intent(this, AboutUsActivity.class);
+                startActivity(i);
                 break;
             case R.id.exit_menu:
                 this.closeApplication();

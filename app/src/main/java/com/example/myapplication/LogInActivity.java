@@ -25,7 +25,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LogInActivity extends AppCompatActivity implements View.OnLongClickListener, DialogInterface.OnClickListener {
 
     private FirebaseAuth mAuth;
-    private Button buttonLogIn, buttonSignUp;
+    private Button buttonLogIn;
     private static final String TAG = "FIREBASE";
     private EditText editTextEmail, editTextPassword;
 
@@ -38,7 +38,6 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
         mAuth = FirebaseAuth.getInstance();
 
         buttonLogIn = findViewById(R.id.buttonLogIn);
-        buttonSignUp = findViewById(R.id.buttonSignUp);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
 
@@ -58,7 +57,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
     public void logIn(View view){
 
         //Intent intent = new Intent(this, MainActivity.class);
-        if(!editTextEmail.getText().toString().equals("") && editTextEmail.getText().toString().contains("@") && !editTextPassword.getText().toString().equals("")){
+        if(!editTextEmail.getText().toString().equals("") && editTextEmail.getText().toString().contains("@") &&
+                !editTextPassword.getText().toString().equals("")){
 
             //saving email & password of the user in a local file for future use
             // creating a shared preference (sp)
@@ -127,6 +127,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
         switch (item.getItemId()){
             case R.id.aboutUs_menu:
                 Intent i= new Intent(this, AboutUsActivity.class);
+                startActivity(i);
                 break;
             case R.id.exit_menu:
                 this.closeApplication();
@@ -162,7 +163,6 @@ public class LogInActivity extends AppCompatActivity implements View.OnLongClick
                            Toast.makeText(LogInActivity.this, "Authentication failed.",
                                    Toast.LENGTH_SHORT).show();
                        }
-                       // ...
                    }
                });
    }

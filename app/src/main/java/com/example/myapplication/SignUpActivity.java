@@ -32,12 +32,9 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
 
 
     private FirebaseAuth mAuth;
-    private Button buttonSubmit;
-    private TextView textViewGender;
     private static final String TAG = "FIREBASE";
     private  FirebaseAuth firebaseAuth= FirebaseAuth.getInstance();
     private FirebaseDatabase database= FirebaseDatabase.getInstance("https://sanctum-bc758-default-rtdb.europe-west1.firebasedatabase.app/");
-    private RadioButton radioButtonFemale, radioButtonMale;
     private EditText editTextName, editTextSurname,editTextEmail, editTextBirthday, editTextPassword;
 
 
@@ -49,19 +46,12 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
 
         mAuth = FirebaseAuth.getInstance();
 
-        buttonSubmit = findViewById(R.id.buttonSubmit);
-
-        radioButtonMale = findViewById(R.id.radioButtonMale);
-        radioButtonFemale = findViewById(R.id.radioButtonFemale);
-
         editTextName = findViewById(R.id.editTextName);
         editTextSurname = findViewById(R.id.editTextSurname);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextBirthday = findViewById(R.id.editTextBirthday);
         editTextPassword = findViewById(R.id.editTextPassword);
 
-
-        textViewGender = findViewById(R.id.textViewGender);
 
     }
 
@@ -143,7 +133,9 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             DatabaseReference myRef;
-                            User u= new User(editTextName.getText().toString(), editTextSurname.getText().toString(), editTextEmail.getText().toString(), editTextBirthday.getText().toString(), editTextPassword.getText().toString());
+                            User u= new User(editTextName.getText().toString(),
+                                    editTextSurname.getText().toString(), editTextEmail.getText().toString(),
+                                    editTextBirthday.getText().toString(), editTextPassword.getText().toString());
                             myRef= database.getReference("users/"+ user.getUid());
                             myRef.setValue(u);
                             Intent i = new Intent(SignUpActivity.this, MainActivity.class);
@@ -155,8 +147,7 @@ public class SignUpActivity extends AppCompatActivity implements DialogInterface
                             Toast.makeText(SignUpActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
-                    }
-                });
+                    }});
     }
 
 }

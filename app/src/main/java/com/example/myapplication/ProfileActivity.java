@@ -37,7 +37,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.nio.channels.InterruptedByTimeoutException;
 
-public class ProfileActivity extends AppCompatActivity implements DialogInterface.OnClickListener, View.OnClickListener, View.OnLongClickListener{
+public class ProfileActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener{
 
     //request for camera activity result
     private static final int CAMERA_REQUEST = 0;
@@ -115,7 +115,6 @@ public class ProfileActivity extends AppCompatActivity implements DialogInterfac
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
     }
@@ -231,14 +230,16 @@ public class ProfileActivity extends AppCompatActivity implements DialogInterfac
         startActivity(intent);
     }
 
-    @Override
-    public void onClick(DialogInterface dialogInterface, int i) {
-    }
 
     public void logOut(View view){
         mAuth.signOut();
         this.finish();
         Intent intent= new Intent(ProfileActivity.this, WelcomeActivity.class);
+        startActivity(intent);
+    }
+
+    public void back(View view){
+        Intent intent= new Intent(ProfileActivity.this, MainActivity.class);
         startActivity(intent);
     }
 

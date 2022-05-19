@@ -12,7 +12,6 @@ import android.widget.ImageView;
 public class HelpActivity extends AppCompatActivity{
 
     private ImageView backArrow;
-    private CardView contactUsCard, inquiriesCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
