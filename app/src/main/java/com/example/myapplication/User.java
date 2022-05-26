@@ -19,6 +19,7 @@ public class User {
         this.password= password;
     }
 
+    //empty because it is built in FB
     public User(){}
 
 

@@ -9,8 +9,7 @@ public class MusicService extends Service {
 
     MediaPlayer mediaPlayer;
 
-    public MusicService() {
-    }
+    public MusicService() {}
 
     @Override
     public IBinder onBind(Intent intent) {
